@@ -1,3 +1,4 @@
+import ClientNeeds from "./(main)/components/ClientNeeds";
 import Hero from "./(main)/components/Hero";
 import Navbar from "./(main)/components/Navbar";
 import Services from "./(main)/components/Services";
@@ -8,6 +9,7 @@ export default function Home() {
       <Navbar />
       <Hero />
       <Services />
+      <ClientNeeds />
     </div>
   );
 }

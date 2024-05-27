@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 function Hero() {
   return (
     <div className="bg-scroll bg-[url('/heroi.jpg')] object-cover bg-no-repeat w-full h-full md:h-[600px]">
-      <div className="bg-scroll bg-blue-500 bg-opacity-70 h-[600px]">
+      <div className="bg-scroll bg-blue-500 bg-opacity-50 h-[600px]">
         <div className="px-6 translate-y-80 md:pl-36 ">
           <motion.h1
             initial={{
@@ -42,12 +42,12 @@ function Hero() {
                 </span>
               </h1>
               <p className="py-5 mr-2">
-                You World Of Technology with ICT Specialists
+                Your World Of Technology with ICT Specialists
               </p>
             </div>
           </div>
           <Image
-            src={"/hero2.jpg"}
+            src={"/coding.jpg"}
             alt=""
             width={300}
             height={400}

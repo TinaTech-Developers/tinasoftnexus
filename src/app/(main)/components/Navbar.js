@@ -17,7 +17,7 @@ function Navbar() {
   return (
     <div className="shadow-lg w-full fixed top-0 left-0 z-50">
       <div className="h-10 w-full bg-blue-950">
-        <h1 className="text-center text-white py-2 font-semibold">
+        <h1 className=" text-sm text-center text-white py-2 font-semibold">
           Welcome To TinaSoft Nexus
         </h1>
       </div>
@@ -39,9 +39,10 @@ function Navbar() {
             <li key={link.name} className="md:ml-8 text-base md:my-0 my-4">
               <a
                 href={link.link}
-                className="text-gray-800 hover:text-blue-950 duration-400 uppercase"
+                className="group text-gray-800 hover:text-blue-950 transition duration-800 uppercase"
               >
                 {link.name}
+                <span class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-blue-950"></span>
               </a>
             </li>
           ))}
