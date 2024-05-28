@@ -62,7 +62,7 @@ function Service() {
         Development as a Service (SDaaS), you can harness the full potential of
         technology to drive innovation, efficiency, and growth.
       </p>
-      <div className="w-20 md:w-[98px] mt-4">
+      <div className="w-20 md:w-[98px] mt-4 z-10">
         <Button name={"More Info"} link={"/"} />
       </div>
     </motion.div>

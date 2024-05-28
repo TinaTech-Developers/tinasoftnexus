@@ -2,6 +2,7 @@
 import Image from "next/image";
 import React from "react";
 import { motion } from "framer-motion";
+import Button from "./Button";
 
 function Hero() {
   return (
@@ -69,12 +70,13 @@ function Hero() {
             <br /> From inception to deployment, we collaborate closely with you
             to ensure every aspect of your vision is realized
           </p>
-          <button
+          {/* <button
             onClick={""}
             className="bg-blue-950 p-2 text-white rounded-full"
           >
             OUR SERVICES
-          </button>
+          </button> */}
+          <Button name={"OUR SERVICES"} link={"/services"} />
         </div>
       </div>
     </div>

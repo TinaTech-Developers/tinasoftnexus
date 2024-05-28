@@ -6,6 +6,7 @@ import { IoMdMenu, IoMdClose } from "react-icons/io";
 function Navbar() {
   let links = [
     { name: "Home", link: "/" },
+    { name: "Portifolio ", link: "/portfolio" },
     { name: "Products", link: "/products" },
     { name: "Services", link: "/services " },
     { name: "About", link: "/about" },
