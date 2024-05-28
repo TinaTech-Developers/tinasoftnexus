@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 function Testimonial() {
   return (
-    <div className="flex flex-col w-[60%] h-48 p-4 md:px-32 items-center justify-center mx-auto gap-4">
+    <div className="flex flex-col md:w-[60%] h-48 p-4 md:px-32 items-center justify-center mx-auto gap-4">
       <p>
         TinaSoft Nexus has been supporting us for the past three years and they
         have transferred so much knowledge to us such that we are able to
