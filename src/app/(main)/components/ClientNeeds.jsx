@@ -44,7 +44,7 @@ function Needs() {
       initial={{ y: 100, opacity: 0 }}
       whileInView={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.8 }}
-      className="grid grid-cols-2 gap-20 px-4"
+      className="grid grid-cols-2 gap-10 md:gap-20 mt-10 px-4"
     >
       <Need name={"Quality"} />
       <Need name={"Reliability"} />
