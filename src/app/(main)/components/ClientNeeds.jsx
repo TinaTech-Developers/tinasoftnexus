@@ -26,13 +26,13 @@ function ClientNeeds() {
         <Needs />
       </div>
       <div className="col-span-1">
-        <Image
+        {/* <Image
           src={"/web.gif"}
           alt="TinaSoft Nexus"
           height={200}
           width={300}
           className="flex items-center justify-center my-4 w-full h-full "
-        />
+        /> */}
       </div>
     </div>
   );
