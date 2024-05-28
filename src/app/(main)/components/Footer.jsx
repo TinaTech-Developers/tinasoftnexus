@@ -27,7 +27,7 @@ function Footer() {
 
   return (
     <div className="w-full flex flex-col gap-10 bg-[#00001C]">
-      <div className="grid grid-cols-1 md:grid-cols-5 mx-auto  text-gray-500 items-center ">
+      <div className="grid grid-cols-1 md:grid-cols-5 mx-auto  text-gray-500 items-center gap-5">
         <div className="col-span-1 flex flex-col items-start justify-center px-10 gap-1">
           <h1 className="text-start text-xl font-bold uppercase mt-5">
             Services

@@ -46,7 +46,7 @@ function Testimonials() {
           <span class="block max-w-[13%] py-[2px] transition-all duration-500 h-0.5 bg-blue-400  translate-x-[195px] -translate-y-2"></span>
         </h1>
       </div>
-      <SliderWrapper className="mt-10">
+      <SliderWrapper className="mt-4">
         <Slider {...settings} className="flex items-center justify-center">
           <Testimonial />
           <Testimonial />

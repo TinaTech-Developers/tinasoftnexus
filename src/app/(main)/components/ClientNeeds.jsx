@@ -31,7 +31,7 @@ function ClientNeeds() {
           alt="TinaSoft Nexus"
           height={200}
           width={300}
-          className="w-full h-full"
+          className="flex items-center justify-center my-4 w-full h-full "
         />
       </div>
     </div>
