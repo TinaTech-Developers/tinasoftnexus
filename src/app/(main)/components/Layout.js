@@ -9,7 +9,7 @@ function MainLayout({ children }) {
       <Navbar />
 
       {children}
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }
