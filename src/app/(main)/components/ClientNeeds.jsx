@@ -13,11 +13,11 @@ function ClientNeeds() {
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className="text-2xl md:text-4xl font-semibold px-10 ">
+          <h1 className="text-2xl md:text-4xl font-semibold px-4 ">
             We Are Aware of What Your <br />
             Company Needs
           </h1>
-          <p className="p-10 ">
+          <p className="p-4 ">
             Flexible technology solutions are essential for expanding
             businesses. We can help you simplify technology and expand to meet
             your demands.
@@ -26,13 +26,13 @@ function ClientNeeds() {
         <Needs />
       </div>
       <div className="col-span-1">
-        {/* <Image
+        <Image
           src={"/web.gif"}
           alt="TinaSoft Nexus"
           height={200}
           width={300}
           className="flex items-center justify-center my-4 w-full h-full "
-        /> */}
+        />
       </div>
     </div>
   );
