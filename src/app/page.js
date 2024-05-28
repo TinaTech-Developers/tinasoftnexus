@@ -16,7 +16,7 @@ export default function Home() {
       <About />
       <ClientNeeds />
       <Partners />
-      <Promotion />
+      {/* <Promotion /> */}
       <Testimonials />
     </MainLayout>
   );
