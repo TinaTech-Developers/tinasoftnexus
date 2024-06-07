@@ -23,7 +23,14 @@ function Navbar() {
         </h1>
       </div>
       <div className="md:flex items-center justify-between bg-white py-4  md:px-10 px-7">
-        <h1 className="text-3xl font-bold text-blue-950 ">TinaSoft Nexus</h1>
+        <Image
+          src={"/logo.jpg"}
+          alt="tinasoftlogo"
+          height={50}
+          width={100}
+          className="w-32 h-full object-cover"
+        />
+        {/* <h1 className="text-3xl font-bold text-blue-950 ">TinaSoft Nexus</h1> */}
         <div
           onClick={() => setOpen(!open)}
           className="text-3xl absolute right-8 top-6 cursor-pointer md:hidden my-8"

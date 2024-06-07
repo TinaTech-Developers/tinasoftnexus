@@ -11,7 +11,6 @@ export default function Loading() {
         width={200}
         className="w-screen h-screen"
       />
-      ;
     </div>
   );
 }

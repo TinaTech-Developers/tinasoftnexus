@@ -4,6 +4,7 @@ import Button from "./Button";
 import { FaSquareWhatsapp, FaXTwitter } from "react-icons/fa6";
 import { IoLogoFacebook } from "react-icons/io";
 import { FaLinkedin } from "react-icons/fa";
+import Image from "next/image";
 
 function Footer() {
   let links = [
@@ -95,7 +96,18 @@ function Footer() {
           <p>Email: info@tinasoftnexus.co.zw</p>
         </div>
       </div>
-      <hr className="w-[80%] bg-white mx-auto my-10" />
+      <hr className="w-[80%] bg-white mx-auto " />
+      <div className="grid grid-cols-1 md:grid-cols-3">
+        <div className="col-span-1 flex justify-center items-center">
+          <Image
+            src={"/logo.jpg"}
+            alt="tinasoftlogo"
+            height={100}
+            width={200}
+          />
+        </div>
+        <div className="col-span-1 md:col-span-2"></div>
+      </div>
       <div className="bg-blue-400 h-16 flex items-center justify-center">
         <p className="text-xs">
           Copyright © 2024 TinaSoft Nexus. All Rights Reserved
