@@ -31,7 +31,7 @@ function Hero() {
         </div>
       </div>
       <div className="w-[95%] grid grid-cols-1 md:grid-cols-2 mx-auto -translate-y-10 bg-white shadow-2xl">
-        <div className="col-span-1 md:flex">
+        <div className="col-span-1 md:flex m-5">
           <div className="flex flex-col items-start justify-center bg-scroll bg-[url('/blue.jpg')] object-cover w-full md:w-[50%] md:h-96 h-80 ">
             <div className="ml-4 text-white ">
               <h1 className="text-2xl md:text-3xl   font-bold">
@@ -55,7 +55,7 @@ function Hero() {
             className="h-80 md:h-96 w-full md:w-[50%] object-cover"
           />
         </div>
-        <div className="flex flex-col ml-10 items-start justify-center gap-6 pb-10 ">
+        <div className="flex flex-col ml-10 items-start justify-center gap-6 pb-10 mx-5">
           <h1 className="text-xl md:text-3xl font-semibold text-blue-900 pt-10">
             Software Services
           </h1>

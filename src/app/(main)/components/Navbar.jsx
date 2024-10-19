@@ -19,7 +19,7 @@ function Navbar() {
     <div className="shadow-lg w-full fixed top-0 left-0 z-50">
       <div className="h-10 w-full bg-blue-950">
         <h1 className=" text-sm text-center text-white py-2 font-semibold">
-          Welcome To TinaSoft Nexus
+          Welcome To TinaSoft Nexus : +263
         </h1>
       </div>
       <div className="md:flex items-center justify-between bg-white py-4  md:px-10 px-7">

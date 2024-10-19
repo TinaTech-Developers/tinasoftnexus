@@ -55,7 +55,7 @@ function Needs() {
 
   function Need({ name }) {
     return (
-      <div className="flex items-center justify-start w-40 mx-auto gap-4">
+      <div className="flex items-center justify-start w-40 mx-auto gap-4 bg-blue-400 p-2 rounded-lg">
         <GiCheckMark
           size={34}
           color="#00001C"
