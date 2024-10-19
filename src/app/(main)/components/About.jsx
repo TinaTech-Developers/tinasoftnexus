@@ -6,7 +6,7 @@ import Button from "./Button";
 function About() {
   return (
     <>
-      <div className="flex flex-col items-center justify-center">
+      <div className="flex flex-col items-center justify-center md:mt-[70vh]">
         <h1 className=" group  text-center my-10 text-3xl uppercase ">
           Who Are We?
           <span class="block max-w-[55%] py-[2px] transition-all duration-500 h-0.5 bg-blue-950 mt-2 "></span>
@@ -35,7 +35,7 @@ function About() {
             marketing, IT support, and more. Our team of experts collaborates
             closely with clients to understand their unique needs and goals,
             harnessing the latest technologies to drive business growth. Founded
-            on principles of innovation, collaboration, and excellence, we're
+            on principles of innovation, collaboration, and excellence, we are
             dedicated to empowering businesses to thrive in the digital age. Let
             us help you take your business to the next level - contact us today!
           </h1>

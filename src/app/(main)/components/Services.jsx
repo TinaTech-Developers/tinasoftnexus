@@ -8,9 +8,9 @@ import Image from "next/image";
 
 function Services() {
   return (
-    <div className="bg-blue-100 pb-10 md:mb-20  h-full">
+    <div className="bg-blue-100 py-10 md:pb-20  h-full">
       <div className="flex flex-col items-center justify-center">
-        <h1 className=" group md:mt-[80vh] text-center my-5 text-3xl uppercase ">
+        <h1 className=" group  text-center my-5 text-3xl uppercase ">
           Digital Solutions
           <span class="block max-w-[55%] py-[2px] transition-all duration-500 h-0.5 bg-blue-950 mt-2 "></span>
           <span class="block max-w-[25%] py-[2px] transition-all duration-500 h-0.5 bg-blue-700  translate-x-[175px] -translate-y-1"></span>
@@ -36,7 +36,6 @@ function Services() {
 }
 
 function Service({ image, heading, desc, link }) {
-  let sign = "</>";
   return (
     <motion.div
       initial={{
@@ -57,14 +56,14 @@ function Service({ image, heading, desc, link }) {
       transition={{ duration: 0.9 }}
       className="flex flex-col w-80 h-full md:w-96 border border-blue-950  bg-transparent rounded-lg my-5 mx-auto text-gray-600 p-5 items-center"
     >
+      <div className="flex items-center justify-center w-32 h-10 bg-blue-900 opacity-75 absolute text-white font-semibold ">
+        TinaSoft
+        <span className="text-xs text-blue-300 translate-x-2 mt-2">
+          <br />
+          NEXUS
+        </span>
+      </div>
       <div className=" tile relative overflow-hidden group">
-        <div className="flex items-center justify-center w-32 h-10 bg-blue-900 opacity-75 absolute text-white font-semibold ">
-          TinaSoft
-          <span className="text-xs text-blue-300 translate-x-2 mt-2">
-            <br />
-            NEXUS
-          </span>
-        </div>
         {/* <div> {icon}</div> */}
         <Image
           src={image}

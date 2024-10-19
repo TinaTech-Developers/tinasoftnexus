@@ -12,8 +12,9 @@ export default function Home() {
   return (
     <MainLayout>
       <Hero />
-      <Services />
       <About />
+      <Services />
+      {/* <About /> */}
       <ClientNeeds />
       <Partners />
       <Promotion />
