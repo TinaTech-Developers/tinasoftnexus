@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import React, { useState } from "react";
+import ImageSlider from "./ImageSlider";
 
 function MiniHeader() {
   const [toggle, setToggle] = useState(1);
@@ -43,11 +44,14 @@ function MiniHeader() {
         </Link>
       </div>
       <div className="p-6">
-        <div className={toggle == 1 ? "block" : "hidden"}> Websites</div>
-        <div className={toggle == 2 ? "block" : "hidden"}>
-          Software Solutions
+        <div className={toggle == 1 ? "block" : "hidden"}>
+          <h1 className="text-xl font-semibold mb-10">
+            Software Solutions Websites
+          </h1>
+          <ImageSlider />
         </div>
-        <div className={toggle == 3 ? "block" : "hidden"}>Networking</div>
+        <div className={toggle == 2 ? "block" : "hidden"}>Networking</div>
+        <div className={toggle == 3 ? "block" : "hidden"}>Websites</div>
         <div className={toggle == 4 ? "block" : "hidden"}> CCTV Solutions</div>
       </div>
     </div>

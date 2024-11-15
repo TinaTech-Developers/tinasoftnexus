@@ -7,7 +7,7 @@ import Button from "./Button";
 function SubHero() {
   return (
     <div className="bg-scroll bg-[url('/heroi.jpg')] object-cover bg-no-repeat w-full h-full md:h-[500px]">
-      <div className="bg-scroll bg-blue-500 bg-opacity-50 h-[500px]">
+      <div className="bg-scroll bg-blue-500 bg-opacity- h-[500px]">
         <div className="px-6 translate-y-80 md:pl-36 ">
           <motion.h1
             initial={{

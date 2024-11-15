@@ -1,8 +1,10 @@
+import Image from "next/image";
 import About from "./(main)/components/About";
+import Button from "./(main)/components/Button";
 import ClientNeeds from "./(main)/components/ClientNeeds";
 import Hero from "./(main)/components/Hero";
+import HeroSlider from "./(main)/components/HeroSlider";
 import MainLayout from "./(main)/components/Layout";
-import Navbar from "./(main)/components/Navbar";
 import Partners from "./(main)/components/Partners";
 import Promotion from "./(main)/components/Promotion";
 import Services from "./(main)/components/Services";
@@ -11,7 +13,8 @@ import Testimonials from "./(main)/components/Testimonials";
 export default function Home() {
   return (
     <MainLayout>
-      <Hero />
+      <HeroSlider />
+
       <About />
       <Services />
       {/* <About /> */}

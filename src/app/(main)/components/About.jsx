@@ -2,11 +2,12 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Button from "./Button";
+import Image from "next/image";
 
 function About() {
   return (
     <>
-      <div className="flex flex-col items-center justify-center md:mt-[70vh]">
+      <div className="flex flex-col items-center justify-center ">
         <h1 className=" group  text-center my-10 text-3xl uppercase ">
           Who Are We?
           <span class="block max-w-[55%] py-[2px] transition-all duration-500 h-0.5 bg-blue-950 mt-2 "></span>
