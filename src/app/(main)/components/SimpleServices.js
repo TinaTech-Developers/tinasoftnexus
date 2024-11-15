@@ -1,6 +1,8 @@
+"use effect";
 import React from "react";
 import Button from "./Button";
 import Image from "next/image";
+import Typewriter from "typewriter-effect";
 
 function SimpleServices({ image, title, subtitle, description }) {
   return (
@@ -30,7 +32,16 @@ function SimpleServices({ image, title, subtitle, description }) {
         <h1 className="text-xl md:text-3xl font-semibold text-blue-900 pt-10">
           {title}
         </h1>
-        <h2 className="text-2xl font-normal text-blue-400">{subtitle}</h2>
+        <h2 className="text-2xl font-normal text-blue-400">
+          <Typewriter
+            options={{
+              autoStart: true,
+              loop: true,
+              delay: 50,
+              strings: [subtitle],
+            }}
+          />
+        </h2>
         <p>{description}</p>
         {/* <button
             onClick={""}

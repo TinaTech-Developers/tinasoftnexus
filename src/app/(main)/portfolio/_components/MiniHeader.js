@@ -45,14 +45,22 @@ function MiniHeader() {
       </div>
       <div className="p-6">
         <div className={toggle == 1 ? "block" : "hidden"}>
-          <h1 className="text-xl font-semibold mb-10">
-            Software Solutions Websites
-          </h1>
+          <h1 className="text-xl font-semibold mb-10">Software Solutions</h1>
           <ImageSlider />
         </div>
-        <div className={toggle == 2 ? "block" : "hidden"}>Networking</div>
-        <div className={toggle == 3 ? "block" : "hidden"}>Websites</div>
-        <div className={toggle == 4 ? "block" : "hidden"}> CCTV Solutions</div>
+        <div className={toggle == 2 ? "block" : "hidden"}>
+          <h1 className="text-xl font-semibold mb-10"> Networking</h1>
+          <ImageSlider />
+        </div>
+        <div className={toggle == 3 ? "block" : "hidden"}>
+          <h1 className="text-xl font-semibold mb-10"> Websites</h1>
+          <ImageSlider />
+        </div>
+      </div>
+      <div className={toggle == 4 ? "block" : "hidden"}>
+        {" "}
+        <h1 className="text-xl font-semibold mb-10"> CCTV Solutions</h1>
+        <ImageSlider />
       </div>
     </div>
   );

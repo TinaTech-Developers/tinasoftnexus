@@ -1,9 +1,16 @@
-import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
+import {
+  Navigation,
+  Pagination,
+  Scrollbar,
+  A11y,
+  Autoplay,
+} from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
+import "swiper/css/autoplay"; // Import autoplay styles
 import styled from "@emotion/styled";
 import { useState } from "react";
 
@@ -34,10 +41,15 @@ function ImageSlider() {
   return (
     <>
       <StyledSwiper
-        modules={[Navigation, Pagination, Scrollbar, A11y]}
+        modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]} // Add Autoplay module here
         spaceBetween={50}
         pagination={{ clickable: true }}
         onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
+        autoplay={{
+          delay: 3000, // Auto slide every 3 seconds
+          disableOnInteraction: false, // Allow auto-slide even when interacting
+        }}
+        loop={true} // Explicitly enable loop
         breakpoints={{
           640: {
             slidesPerView: 1,
@@ -54,35 +66,24 @@ function ImageSlider() {
         }}
       >
         <SwiperSlide>
-          <div className="h-56 w-96 border"></div>
+          <div className="h-56 w-96 border">11111111</div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="h-56 w-96 border"></div>
-        </SwiperSlide>{" "}
+          <div className="h-56 w-96 border">22222222</div>
+        </SwiperSlide>
         <SwiperSlide>
-          <div className="h-56 w-96 border"></div>
-        </SwiperSlide>{" "}
+          <div className="h-56 w-96 border">3333333</div>
+        </SwiperSlide>
         <SwiperSlide>
-          <div className="h-56 w-96 border"></div>
+          <div className="h-56 w-96 border">4444444</div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div className="h-56 w-96 border">555555</div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div className="h-56 w-96 border">666666</div>
         </SwiperSlide>
       </StyledSwiper>
-      {/* <PaginationContainer>
-        {Array.from({ length: 4 }).map((_, index) => (
-          <div
-            key={index}
-            style={{
-              width: "24px",
-              height: "24px",
-              borderRadius: "50%",
-              background: activeIndex === index ? "#007aff" : "#ccc",
-              transition: "background 0.3s",
-            }}
-            onClick={() => setActiveIndex(index)} // Set active index on click
-          >
-            {">"}
-          </div>
-        ))}
-      </PaginationContainer> */}
     </>
   );
 }
