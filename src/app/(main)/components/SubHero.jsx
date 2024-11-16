@@ -6,14 +6,14 @@ import Typewriter from "typewriter-effect";
 
 function SubHero() {
   return (
-    <div className="bg-scroll bg-[url('/  ')] object-cover bg-no-repeat w-full h-full md:h-[500px] ">
+    <div className="bg-scroll bg-[url('/  ')] object-cover bg-no-repeat w-full h-[500px] md:h-[500px] ">
       <div className="bg-scroll bg-blue-500 bg-opacity-5 h-[500px]">
         <Image
           src={"/giphy2.gif"}
           alt=""
           height={300}
           width={600}
-          className="absolute w-full h-full md:h-[500px] object-cover"
+          className="absolute w-full h-[500px] md:h-[500px] object-cover"
         />
         <div className="px-6 translate-y-80 md:pl-36 ">
           <motion.h1
