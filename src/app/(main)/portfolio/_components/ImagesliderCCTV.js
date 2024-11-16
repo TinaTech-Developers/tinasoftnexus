@@ -1,3 +1,4 @@
+"use client";
 import {
   Navigation,
   Pagination,
@@ -13,6 +14,9 @@ import "swiper/css/scrollbar";
 import "swiper/css/autoplay"; // Import autoplay styles
 import styled from "@emotion/styled";
 import { useState } from "react";
+import { motion } from "framer-motion";
+import Image from "next/image";
+import Link from "next/link";
 
 const Slide = styled.div`
   height: 200px; /* Adjust height as needed */
@@ -35,7 +39,7 @@ const StyledSwiper = styled(Swiper)`
   padding-bottom: 40px; /* Adjust based on the pagination height */
 `;
 
-function ImageSlider() {
+function ImageSliderCCTV() {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
@@ -66,26 +70,77 @@ function ImageSlider() {
         }}
       >
         <SwiperSlide>
-          <div className="h-56 w-96 border">11111111</div>
+          <CCTVCard
+            image={"/cctv.jpg"}
+            // link={"https:www.sitawainvestments.co.zw"}
+            company={" CCTV Installation"}
+          />
         </SwiperSlide>
         <SwiperSlide>
-          <div className="h-56 w-96 border">22222222</div>
+          <CCTVCard
+            image={"/cctv1.jpeg"}
+            link={"https:www.jacautopro.co.zw"}
+            company={"Cameras"}
+          />
         </SwiperSlide>
         <SwiperSlide>
-          <div className="h-56 w-96 border">3333333</div>
+          <CCTVCard
+            image={"/net.jpeg"}
+            link={"https:www.jacautopro.co.zw"}
+            company={"TinaSoft NEXUS"}
+          />
         </SwiperSlide>
         <SwiperSlide>
-          <div className="h-56 w-96 border">4444444</div>
+          <CCTVCard image={"/networking.webp"} link={""} />
         </SwiperSlide>
         <SwiperSlide>
-          <div className="h-56 w-96 border">555555</div>
+          <CCTVCard image={"/tinas.png"} link={""} />
         </SwiperSlide>
         <SwiperSlide>
-          <div className="h-56 w-96 border">666666</div>
+          <CCTVCard image={"/tinash.png"} link={""} />
         </SwiperSlide>
       </StyledSwiper>
     </>
   );
 }
 
-export default ImageSlider;
+function CCTVCard({ image, link, company }) {
+  return (
+    <motion.div
+      initial={{
+        x: 0,
+        scale: 0,
+        opacity: 0,
+      }}
+      whileInView={{
+        x: 0,
+        scale: 1,
+        opacity: 1,
+      }}
+      transition={{ duration: 0.8 }}
+      className="w-80 h-80 md:h-64 md:w-96 border relative group"
+    >
+      <Image
+        src={image}
+        alt="Website Image"
+        height={100}
+        width={200}
+        className="w-80 h-72 md:h-56 md:w-96 object-cover"
+      />
+
+      <Link
+        href=""
+        target="_blank"
+        // rel="noopener noreferrer"
+        className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 bg-black bg-opacity-50 text-blue-800 text-lg font-semibold transition-opacity duration-300"
+      >
+        Explore
+      </Link>
+      <h1 className="text-center font-semibold hover:z-20 hover:text-white">
+        {company}
+      </h1>
+    </motion.div>
+  );
+}
+
+export default ImageSliderCCTV;

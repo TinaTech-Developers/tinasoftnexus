@@ -9,6 +9,7 @@ function Portfolio() {
     <MainLayout>
       <SubHero />
       <MiniHeader />
+
       <ClientNeeds />
     </MainLayout>
   );

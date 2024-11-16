@@ -4,12 +4,12 @@ import React from "react";
 import { motion } from "framer-motion";
 import Typewriter from "typewriter-effect";
 
-function SubHero() {
+function ServicesSubHero({ image, desc, directory }) {
   return (
     <div className="bg-scroll bg-[url('/  ')] object-cover bg-no-repeat w-full h-full md:h-[500px] ">
       <div className="bg-scroll bg-blue-500 bg-opacity-5 h-[500px]">
         <Image
-          src={"/giphy2.gif"}
+          src={image}
           alt=""
           height={300}
           width={600}
@@ -30,25 +30,23 @@ function SubHero() {
             transition={{ duration: 0.8 }}
             className="text-3xl font-bold text-white"
           >
-            Welcome To{" "}
-            <span className="text-blue-900 font-normal">
-              Tina<span className="font-bold">Soft</span> Nexus
-            </span>
-            <div className="text-white md:text-xl">
+            Our Services
+            <div className="text-white md:text-xl my-2 font-semibold">
               <Typewriter
                 options={{
                   autoStart: true,
                   loop: true,
                   delay: 50,
-                  strings: ["CCTV Installation Services"],
+                  strings: [desc],
                 }}
               />
             </div>
           </motion.h1>
+          <p1 className="text-white  mt-2">{directory}</p1>
         </div>
       </div>
     </div>
   );
 }
 
-export default SubHero;
+export default ServicesSubHero;
