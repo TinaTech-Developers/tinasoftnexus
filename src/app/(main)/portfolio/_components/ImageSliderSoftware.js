@@ -100,6 +100,41 @@ function ImageSliderSoftware() {
           <SoftwareCard image={"/tinash.png"} link={""} />
         </SwiperSlide>
       </StyledSwiper>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mx-auto mt-10">
+        <div className="col-span-1 md:h-65 h-full border p-6">
+          <h1 className="text-xl font-semibold my-4">
+            API & Integration Services
+          </h1>
+          <p className="my-4">
+            Developing robust APIs to enable seamless integrations between
+            systems and third-party services, improving workflow automation.
+          </p>
+          <Link
+            className={`text-xs md:text-sm py-2 relative md:px-4 px-2 border  bg-transparent text-blue-950 transition-colors before:absolute before:left-0 before:top-0 before:-z-10 before:h-full before:w-full before:origin-top-left before:scale-x-0 before:bg-blue-950 before:transition-transform before:duration-300 before:content-[''] hover:text-white before:hover:scale-x-100`}
+            href={"/services/software"}
+          >
+            Explore Our APIs
+          </Link>
+        </div>
+        <div className="col-span-1 md:h-65 h-full border p-6">
+          <h1 className="text-xl font-semibold my-4">
+            Mobile Apps for Business Growth
+          </h1>
+          <p className="my-4">
+            We develop high-performance mobile apps for iOS and Android that
+            connect your business to your customers. From productivity tools to
+            on-the-go shopping experiences, our mobile solutions are designed
+            for success.
+          </p>
+          <Link
+            className={`text-xs md:text-sm py-2 relative md:px-4 px-2 border  bg-transparent text-blue-950 transition-colors before:absolute before:left-0 before:top-0 before:-z-10 before:h-full before:w-full before:origin-top-left before:scale-x-0 before:bg-blue-950 before:transition-transform before:duration-300 before:content-[''] hover:text-white before:hover:scale-x-100`}
+            href={"/services/software"}
+          >
+            Explore Our Mobile Solutions
+          </Link>
+        </div>
+      </div>
     </>
   );
 }

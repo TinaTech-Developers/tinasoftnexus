@@ -14,7 +14,7 @@ function MiniHeader() {
     setToggle(id);
   }
   return (
-    <div className="mb-10 mt-30 md:mt-0">
+    <div className="mb-10 mt-30 md:mt-0 text-blue-950">
       <h1 className="px-4 my-10 text-2xl md:text-4xl font-bold">Explore us</h1>
       <div className=" grid md:flex items-start gap-6 mt-2 cursor-pointer list-none px-4  ">
         <Link
@@ -60,11 +60,11 @@ function MiniHeader() {
           <h1 className="text-xl font-semibold mb-10"> Website Projects</h1>
           <ImageSliderWebsites />
         </div>
-      </div>
-      <div className={toggle == 4 ? "block" : "hidden"}>
-        {" "}
-        <h1 className="text-xl font-semibold mb-10"> CCTV Solutions</h1>
-        <ImageSliderCCTV />
+        <div className={toggle == 4 ? "block" : "hidden"}>
+          {" "}
+          <h1 className="text-xl font-semibold mb-10"> CCTV Solutions</h1>
+          <ImageSliderCCTV />
+        </div>
       </div>
     </div>
   );
