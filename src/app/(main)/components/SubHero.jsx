@@ -40,7 +40,7 @@ function SubHero() {
                   autoStart: true,
                   loop: true,
                   delay: 50,
-                  strings: ["CCTV Installation Services"],
+                  strings: ["Our Portfolio"],
                 }}
               />
             </div>

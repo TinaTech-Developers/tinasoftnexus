@@ -33,7 +33,7 @@ function Navbar() {
 
   return (
     <div className="shadow-lg w-full fixed top-0 left-0 z-50">
-      <div className="h-10 w-full bg-blue-950">
+      <div className="hidden md:block h-10 w-full bg-blue-950">
         <h1 className="text-sm text-center text-white py-2 font-semibold">
           Welcome To TinaSoft Nexus : +263
         </h1>
@@ -44,17 +44,17 @@ function Navbar() {
           alt="tinasoftlogo"
           height={50}
           width={100}
-          className="w-32 h-full object-cover"
+          className="md:w-32 md:h-full object-cover"
         />
         <div
           onClick={() => setOpen(!open)}
-          className="text-3xl absolute right-8 top-6 cursor-pointer md:hidden my-8"
+          className="text-3xl absolute right-8 top-0 cursor-pointer md:hidden my-8"
         >
           {open ? <IoMdClose /> : <IoMdMenu />}
         </div>
         <ul
           className={`md:flex md:items-center md:pb-0 pb-4 absolute md:static bg-white x-[-1] left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in mt-8 ${
-            open ? "top-20 opacity-100" : "top-[-490px]"
+            open ? "top-10 opacity-100" : "top-[-490px]"
           }`}
         >
           {links.map((link) => (
