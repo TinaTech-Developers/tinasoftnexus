@@ -14,8 +14,8 @@ function MiniHeader() {
     setToggle(id);
   }
   return (
-    <div className="mb-10 mt-48 md:mt-0">
-      <h1 className="px-4 my-10 text-4xl font-bold">Explore us</h1>
+    <div className="mb-10 mt-30 md:mt-0">
+      <h1 className="px-4 my-10 text-2xl md:text-4xl font-bold">Explore us</h1>
       <div className=" grid md:flex items-start gap-6 mt-2 cursor-pointer list-none px-4  ">
         <Link
           onClick={() => updateToggle(1)}

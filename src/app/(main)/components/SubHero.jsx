@@ -34,7 +34,7 @@ function SubHero() {
             <span className="text-blue-900 font-normal">
               Tina<span className="font-bold">Soft</span> Nexus
             </span>
-            <div className="text-white md:text-xl">
+            <div className="text-white text-lg md:text-xl">
               <Typewriter
                 options={{
                   autoStart: true,
