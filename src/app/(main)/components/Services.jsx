@@ -9,12 +9,12 @@ import Image from "next/image";
 function Services() {
   return (
     <div className="bg-blue-100 py-10 md:pb-20  h-full">
-      <div className="flex flex-col items-center justify-center">
-        <h1 className=" group  text-center my-5 text-3xl uppercase ">
+      <div className="flex flex-col items-center justify-center ">
+        <h1 className=" group text-blue-950 text-center my-5 text-2xl md:text-3xl uppercase ">
           Digital Solutions
-          <span class="block max-w-[55%] py-[2px] transition-all duration-500 h-0.5 bg-blue-950 mt-2 "></span>
-          <span class="block max-w-[25%] py-[2px] transition-all duration-500 h-0.5 bg-blue-700  translate-x-[175px] -translate-y-1"></span>
-          <span class="block max-w-[13%] py-[2px] transition-all duration-500 h-0.5 bg-blue-400  translate-x-[260px] -translate-y-2"></span>
+          <span class="block w-[100%] md:max-w-[55%] py-[2px] transition-all duration-500 h-0.5 bg-blue-950 mt-2 "></span>
+          <span class="hidden md:block max-w-[25%] py-[2px] transition-all duration-500 h-0.5 bg-blue-700  translate-x-[130px] -translate-y-1"></span>
+          <span class="hidden md:block max-w-[13%] py-[2px] transition-all duration-500 h-0.5 bg-blue-400  translate-x-[195px] -translate-y-2"></span>
         </h1>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3  mx-auto gap-4">

@@ -4,12 +4,12 @@ import React from "react";
 import { motion } from "framer-motion";
 import Typewriter from "typewriter-effect";
 
-function SubHero() {
+function SubHero({ image }) {
   return (
     <div className="bg-scroll bg-[url('/  ')] object-cover bg-no-repeat w-full h-[500px] md:h-[500px] ">
       <div className="bg-scroll bg-blue-500 bg-opacity-5 h-[500px]">
         <Image
-          src={"/giphy2.gif"}
+          src={image}
           alt=""
           height={300}
           width={600}

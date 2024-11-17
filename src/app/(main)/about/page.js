@@ -6,7 +6,7 @@ import Loading from "@/app/loading";
 function About() {
   return (
     <MainLayout>
-      <SubHero />
+      <SubHero image={"/png.jpg"} />
       <Loading />
     </MainLayout>
   );
