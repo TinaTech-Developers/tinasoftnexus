@@ -99,12 +99,15 @@ function Footer() {
       <hr className="w-[80%] bg-white mx-auto " />
       <div className="grid grid-cols-1 md:grid-cols-3">
         <div className="col-span-1 flex justify-center items-center">
-          <Image
-            src={"/logo.jpg"}
-            alt="tinasoftlogo"
-            height={100}
-            width={200}
-          />
+          <Link href={"/"}>
+            <Image
+              src={"/logo1.png"}
+              alt="tinasoftlogo"
+              height={100}
+              width={200}
+              className=" w-32 h-full"
+            />
+          </Link>
         </div>
         <div className="col-span-1 md:col-span-2"></div>
       </div>
