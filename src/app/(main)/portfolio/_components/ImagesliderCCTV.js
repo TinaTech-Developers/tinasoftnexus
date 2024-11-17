@@ -100,6 +100,70 @@ function ImageSliderCCTV() {
           <CCTVCard image={"/tinash.png"} link={""} />
         </SwiperSlide>
       </StyledSwiper>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mx-auto mt-10">
+        <div className="col-span-1 md:h-65 h-full border p-6 shadow-2xl">
+          <div className="w-full">
+            <h1 className="text-xl font-semibold mt-4">
+              Advanced Surveillance Systems
+            </h1>
+            <hr className="w-[30%]  bg-blue-600 p-[2px] mt-1" />
+          </div>
+          <p className="my-4">
+            Protect what matters most with our advanced CCTV surveillance
+            systems. We provide cutting-edge IP cameras, motion detection, and
+            night vision technology, allowing you to monitor your premises in
+            real-time and prevent security breaches, day or night.
+          </p>
+          <Link
+            className={`text-xs md:text-sm py-2 relative md:px-4 px-2 border  bg-transparent text-blue-950 transition-colors before:absolute before:left-0 before:top-0 before:-z-10 before:h-full before:w-full before:origin-top-left before:scale-x-0 before:bg-blue-950 before:transition-transform before:duration-300 before:content-[''] hover:text-white before:hover:scale-x-100`}
+            href={"/services/cctv"}
+          >
+            Explore Our CCTV Services
+          </Link>
+        </div>
+        <div className="col-span-1 md:h-65 h-full border p-6 shadow-2xl">
+          <div className="w-full">
+            <h1 className="text-xl font-semibold mt-4">
+              Commercial & Residential CCTV
+            </h1>
+            <hr className="w-[30%]  bg-blue-600 p-[2px] mt-1" />
+          </div>
+
+          <p className="my-4">
+            Whether it’s for commercial buildings or residential properties, we
+            specialize in designing and installing customized CCTV solutions.
+            Our systems are built for maximum coverage, easy maintenance, and
+            long-lasting performance, offering security you can trust.
+          </p>
+          <Link
+            className={`text-xs md:text-sm py-2 relative md:px-4 px-2 border  bg-transparent text-blue-950 transition-colors before:absolute before:left-0 before:top-0 before:-z-10 before:h-full before:w-full before:origin-top-left before:scale-x-0 before:bg-blue-950 before:transition-transform before:duration-300 before:content-[''] hover:text-white before:hover:scale-x-100`}
+            href={"/services/cctv"}
+          >
+            Explore Our CCTV Services
+          </Link>
+        </div>
+        <div className="col-span-1 md:h-65 h-full border p-6 shadow-2xl">
+          <div className="w-full">
+            <h1 className="text-xl font-semibold mt-4">
+              Comprehensive CCTV Solutions
+            </h1>
+            <hr className="w-[30%]  bg-blue-600 p-[2px] mt-1" />
+          </div>
+
+          <p className="my-4">
+            We offer complete CCTV installation services to enhance the security
+            of your property. From high-definition cameras to remote monitoring
+            systems, we provide reliable and scalable solutions tailored to your
+            business or home’s needs, ensuring peace of mind 24/7.
+          </p>
+          <Link
+            className={`text-xs md:text-sm py-2 relative md:px-4 px-2 border  bg-transparent text-blue-950 transition-colors before:absolute before:left-0 before:top-0 before:-z-10 before:h-full before:w-full before:origin-top-left before:scale-x-0 before:bg-blue-950 before:transition-transform before:duration-300 before:content-[''] hover:text-white before:hover:scale-x-100`}
+            href={"/services/cctv"}
+          >
+            Explore Our CCTV Services
+          </Link>
+        </div>
+      </div>
     </>
   );
 }

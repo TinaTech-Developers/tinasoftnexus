@@ -10,7 +10,7 @@ function Navbar() {
     { name: "Products", link: "/products" },
     {
       name: "Services",
-      link: "/services",
+      link: "",
       dropdown: [
         { name: "Web Development", link: "/services/web-development" },
         {

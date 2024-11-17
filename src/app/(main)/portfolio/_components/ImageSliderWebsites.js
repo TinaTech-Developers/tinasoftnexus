@@ -96,6 +96,77 @@ function ImageSliderWebsites() {
           <WebsitesCard link={""} />
         </SwiperSlide>
       </StyledSwiper>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mx-auto mt-10">
+        <div className="col-span-1 md:h-65 h-full border p-6 shadow-2xl">
+          <div className="w-full">
+            <h1 className="text-xl font-semibold mt-4">
+              Custom Website Development
+            </h1>
+            <hr className="w-[30%]  bg-blue-600 p-[2px] mt-1" />
+          </div>
+
+          <p className="my-4">
+            We create custom websites designed to reflect your brand and engage
+            your audience. Whether you need an e-commerce platform, a corporate
+            site, or a portfolio, we build responsive, visually stunning
+            websites that deliver an exceptional user experience across all
+            devices.
+          </p>
+          <Link
+            className={`text-xs md:text-sm py-2 relative md:px-4 px-2 border  bg-transparent text-blue-950 transition-colors before:absolute before:left-0 before:top-0 before:-z-10 before:h-full before:w-full before:origin-top-left before:scale-x-0 before:bg-blue-950 before:transition-transform before:duration-300 before:content-[''] hover:text-white before:hover:scale-x-100`}
+            href={"/services/web-development"}
+          >
+            Explore Our Website Services
+          </Link>
+        </div>
+        <div className="col-span-1 md:h-65 h-full border p-6 shadow-2xl">
+          <div className="w-full">
+            <h1 className="text-xl font-semibold mt-4">
+              {" "}
+              Responsive Web Design
+            </h1>
+            <hr className="w-[30%]  bg-blue-600 p-[2px] mt-1" />
+          </div>
+
+          <p className="my-4">
+            In today’s mobile-first world, we ensure your website is fully
+            responsive across all devices. From smartphones to desktops, our
+            designs adapt flawlessly to screen sizes, providing a consistent,
+            user-friendly experience no matter where your audience views your
+            site.
+          </p>
+          <Link
+            className={`text-xs md:text-sm py-2 relative md:px-4 px-2 border  bg-transparent text-blue-950 transition-colors before:absolute before:left-0 before:top-0 before:-z-10 before:h-full before:w-full before:origin-top-left before:scale-x-0 before:bg-blue-950 before:transition-transform before:duration-300 before:content-[''] hover:text-white before:hover:scale-x-100`}
+            href={"/services/web-development"}
+          >
+            Explore Our Websites Services
+          </Link>
+        </div>
+        <div className="col-span-1 md:h-65 h-full border p-6 shadow-2xl">
+          <div className="w-full">
+            <h1 className="text-xl font-semibold mt-4">
+              {" "}
+              Mobile Apps for Business Growth
+            </h1>
+            <hr className="w-[30%]  bg-blue-600 p-[2px] mt-1" />
+          </div>
+
+          <h1 className="text-xl font-semibold my-4">SEO-Optimized Websites</h1>
+          <p className="my-4">
+            We build websites with SEO in mind, ensuring they rank well on
+            search engines. Our team implements best practices for on-page SEO,
+            content optimization, and site performance, helping your site get
+            found by your target audience and drive organic traffic.
+          </p>
+          <Link
+            className={`text-xs md:text-sm py-2 relative md:px-4 px-2 border  bg-transparent text-blue-950 transition-colors before:absolute before:left-0 before:top-0 before:-z-10 before:h-full before:w-full before:origin-top-left before:scale-x-0 before:bg-blue-950 before:transition-transform before:duration-300 before:content-[''] hover:text-white before:hover:scale-x-100`}
+            href={"/services/web-development"}
+          >
+            Explore Our Websites Services
+          </Link>
+        </div>
+      </div>
     </>
   );
 }

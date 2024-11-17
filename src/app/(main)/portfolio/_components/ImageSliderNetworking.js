@@ -100,6 +100,70 @@ function ImageSliderNetworking() {
           <NetworkingCard image={"/tinash.png"} link={""} />
         </SwiperSlide>
       </StyledSwiper>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mx-auto mt-10">
+        <div className="col-span-1 md:h-65 h-full border p-6 shadow-2xl">
+          <div className="w-full">
+            <h1 className="text-xl font-semibold mt-4">Networking Solutions</h1>
+            <hr className="w-[30%]  bg-blue-600 p-[2px] mt-1" />
+          </div>
+          <p className="my-4">
+            We provide comprehensive networking solutions to ensure your
+            business stays connected and secure. From designing robust local
+            area networks (LANs) to implementing high-performance wide area
+            networks (WANs), we focus on building scalable, secure, and
+            efficient infrastructures that support seamless communication,
+            enhance productivity, and drive growth.
+          </p>
+          <Link
+            className={`text-xs md:text-sm py-2 relative md:px-4 px-2 border  bg-transparent text-blue-950 transition-colors before:absolute before:left-0 before:top-0 before:-z-10 before:h-full before:w-full before:origin-top-left before:scale-x-0 before:bg-blue-950 before:transition-transform before:duration-300 before:content-[''] hover:text-white before:hover:scale-x-100`}
+            href={"/services/networking"}
+          >
+            Explore Our Networking Services
+          </Link>
+        </div>
+        <div className="col-span-1 md:h-65 h-full border p-6 shadow-2xl">
+          <div className="w-full">
+            <h1 className="text-xl font-semibold mt-4">
+              Reliable Network Infrastructure
+            </h1>
+            <hr className="w-[30%]  bg-blue-600 p-[2px] mt-1" />
+          </div>
+
+          <p className="my-4">
+            We design and implement robust network infrastructures that ensure
+            seamless connectivity for your business. From LAN to WAN setups, our
+            solutions are built for speed, reliability, and security, supporting
+            your organization’s growth and communication needs.
+          </p>
+          <Link
+            className={`text-xs md:text-sm py-2 relative md:px-4 px-2 border  bg-transparent text-blue-950 transition-colors before:absolute before:left-0 before:top-0 before:-z-10 before:h-full before:w-full before:origin-top-left before:scale-x-0 before:bg-blue-950 before:transition-transform before:duration-300 before:content-[''] hover:text-white before:hover:scale-x-100`}
+            href={"/services/networking"}
+          >
+            Explore Our Services
+          </Link>
+        </div>
+        <div className="col-span-1 md:h-65 h-full border p-6 shadow-2xl">
+          <div className="w-full">
+            <h1 className="text-xl font-semibold mt-4">
+              Network Monitoring & Maintenance
+            </h1>
+            <hr className="w-[30%]  bg-blue-600 p-[2px] mt-1" />
+          </div>
+
+          <p className="my-4">
+            Our team provides proactive network monitoring and maintenance to
+            ensure your systems run smoothly 24/7. We detect and resolve issues
+            before they disrupt your business, keeping your network optimized
+            and minimizing downtime.
+          </p>
+          <Link
+            className={`text-xs md:text-sm py-2 relative md:px-4 px-2 border  bg-transparent text-blue-950 transition-colors before:absolute before:left-0 before:top-0 before:-z-10 before:h-full before:w-full before:origin-top-left before:scale-x-0 before:bg-blue-950 before:transition-transform before:duration-300 before:content-[''] hover:text-white before:hover:scale-x-100`}
+            href={"/services/networking"}
+          >
+            Explore Our Services
+          </Link>
+        </div>
+      </div>
     </>
   );
 }

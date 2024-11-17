@@ -10,7 +10,8 @@ import ImageSliderCCTV from "./ImagesliderCCTV";
 function MiniHeader() {
   const [toggle, setToggle] = useState(1);
 
-  function updateToggle(id) {
+  function updateToggle(id, e) {
+    e.preventDefault();
     setToggle(id);
   }
   return (
@@ -18,7 +19,7 @@ function MiniHeader() {
       <h1 className="px-4 my-10 text-2xl md:text-4xl font-bold">Explore us</h1>
       <div className=" grid md:flex items-start gap-6 mt-2 cursor-pointer list-none px-4  ">
         <Link
-          onClick={() => updateToggle(1)}
+          onClick={(e) => updateToggle(1, e)}
           href={""}
           className="text- hover:bg-blue-700 mx-1 text-white border border-blue-600 bg-blue-950 px-4 py-2 rounded-lg "
         >
@@ -26,21 +27,21 @@ function MiniHeader() {
           Software Solutions
         </Link>
         <Link
-          onClick={() => updateToggle(2)}
+          onClick={(e) => updateToggle(2, e)}
           href={""}
           className="text- hover:bg-blue-500 mx-1 text-white border border-blue-600 bg-blue-950 px-4 py-2 rounded-lg"
         >
           Networking
         </Link>
         <Link
-          onClick={() => updateToggle(3)}
+          onClick={(e) => updateToggle(3, e)}
           href={""}
           className="hover:text-black border border-blue-600 hover:bg-blue-200 mx-1 text-white bg-blue-950 px-4 py-2 rounded-lg"
         >
           Websites
         </Link>
         <Link
-          onClick={() => updateToggle(4)}
+          onClick={(e) => updateToggle(4, e)}
           href={""}
           className=" hover:text-black border border-blue-600 hover:bg-blue-100 mx-1 text-white bg-blue-950 px-4 py-2 rounded-lg"
         >

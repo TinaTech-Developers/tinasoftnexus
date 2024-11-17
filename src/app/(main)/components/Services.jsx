@@ -76,7 +76,7 @@ function Service({ image, heading, desc, link }) {
       <h1 className="text-xl font-semibold py-4 ">{heading}</h1>
       <p className="">{desc}</p>
       <div className="w-20 md:w-[98px] mt-4 z-10">
-        <Button name={"More Info"} link={""} />
+        <Button name={"More Info"} link={"/portfolio"} />
       </div>
     </motion.div>
   );
