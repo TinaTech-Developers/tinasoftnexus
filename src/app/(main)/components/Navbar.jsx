@@ -1,4 +1,5 @@
 "use client";
+
 import Image from "next/image";
 import React, { useState } from "react";
 import { IoMdMenu, IoMdClose } from "react-icons/io";
@@ -10,13 +11,10 @@ function Navbar() {
     { name: "Products", link: "/products" },
     {
       name: "Services",
-      link: "",
+      link: "#", // Empty link to prevent navigation when clicking on 'Services' (for dropdown)
       dropdown: [
         { name: "Web Development", link: "/services/web-development" },
-        {
-          name: "Software Development",
-          link: "/services/software",
-        },
+        { name: "Software Development", link: "/services/software" },
         { name: "Networking", link: "/services/networking" },
         { name: "CCTV Installation", link: "/services/cctv" },
         { name: "IT Consulting", link: "/services/it-consulting" },
@@ -29,7 +27,7 @@ function Navbar() {
   ];
 
   const [open, setOpen] = useState(false);
-  const [hoveredService, setHoveredService] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false); // State to toggle dropdown visibility
 
   return (
     <div className="shadow-lg w-full fixed top-0 left-0 z-50">
@@ -61,24 +59,29 @@ function Navbar() {
             <li
               key={link.name}
               className="md:ml-8 text-base md:my-0 my-4 relative"
-              onMouseEnter={() => link.dropdown && setHoveredService(true)}
-              onMouseLeave={() => link.dropdown && setHoveredService(false)}
             >
+              {/* For "Services", use a clickable anchor tag but allow dropdown toggling */}
               <a
-                href={link.link}
+                href={link.link} // 'href' should be valid link
                 className="group text-gray-800 hover:text-blue-950 transition duration-800 uppercase"
+                onClick={(e) => {
+                  if (link.dropdown) {
+                    e.preventDefault(); // Prevent default behavior only for 'Services' link
+                    setDropdownOpen(!dropdownOpen); // Toggle the dropdown
+                  }
+                }}
               >
                 {link.name}
                 <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-blue-950"></span>
               </a>
 
               {/* Dropdown menu for "Services" */}
-              {link.dropdown && hoveredService && (
+              {link.dropdown && dropdownOpen && (
                 <ul className="absolute left-0 mt-2 bg-white shadow-lg rounded-lg w-36 z-50">
                   {link.dropdown.map((subLink) => (
                     <li key={subLink.name} className="hover:bg-gray-100">
                       <a
-                        href={subLink.link}
+                        href={subLink.link} // This allows navigation to sub-links
                         className="block group px-4 py-1 text-sm text-gray-800 hover:text-blue-950"
                       >
                         {subLink.name}
