@@ -7,7 +7,13 @@ import MiniHeader from "./_components/MiniHeader";
 function Portfolio() {
   return (
     <MainLayout>
-      <SubHero />
+      <SubHero
+        image={"/giphy2.gif"}
+        heading={"Our Digital Solutions"}
+        text={
+          "TinaSoft NEXUS delivers innovative ICT solutions that empower businesses to thrive."
+        }
+      />
       <MiniHeader />
 
       <ClientNeeds />

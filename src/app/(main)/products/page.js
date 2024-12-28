@@ -5,7 +5,7 @@ import SubHero from "../components/SubHero";
 function Products() {
   return (
     <MainLayout>
-      <SubHero />
+      <SubHero image={""} heading={""} text={""} />
     </MainLayout>
   );
 }

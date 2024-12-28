@@ -3,6 +3,7 @@
 import Image from "next/image";
 import React, { useState } from "react";
 import { IoMdMenu, IoMdClose } from "react-icons/io";
+import { IoChevronDown, IoChevronUp } from "react-icons/io5";
 
 function Navbar() {
   const links = [
@@ -60,21 +61,32 @@ function Navbar() {
               key={link.name}
               className="md:ml-8 text-base md:my-0 my-4 relative"
             >
-              {/* For "Services", use a clickable anchor tag but allow dropdown toggling */}
-              <a
-                href={link.link} // 'href' should be valid link
-                className="group text-gray-800 hover:text-blue-950 transition duration-800 uppercase"
-                onClick={(e) => {
-                  if (link.dropdown) {
-                    e.preventDefault(); // Prevent default behavior only for 'Services' link
-                    setDropdownOpen(!dropdownOpen); // Toggle the dropdown
-                  }
-                }}
-              >
-                {link.name}
-                <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-blue-950"></span>
-              </a>
-
+              <span className="flex items-center justify-center ">
+                {/* For "Services", use a clickable anchor tag but allow dropdown toggling */}
+                <a
+                  href={link.link} // 'href' should be valid link
+                  className="group text-gray-800 hover:text-blue-950 transition duration-800 uppercase"
+                  onClick={(e) => {
+                    if (link.dropdown) {
+                      e.preventDefault(); // Prevent default behavior only for 'Services' link
+                      setDropdownOpen(!dropdownOpen); // Toggle the dropdown
+                    }
+                  }}
+                >
+                  {link.name}
+                  <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-blue-950"></span>
+                </a>{" "}
+                {/* Add the dropdown arrow icon here */}
+                {link.dropdown && (
+                  <span className="ml-1 mb-1">
+                    {dropdownOpen ? (
+                      <IoChevronUp className="inline-block text-lg" />
+                    ) : (
+                      <IoChevronDown className="inline-block text-lg" />
+                    )}
+                  </span>
+                )}
+              </span>
               {/* Dropdown menu for "Services" */}
               {link.dropdown && dropdownOpen && (
                 <ul className="absolute left-0 mt-2 bg-white shadow-lg rounded-lg w-36 z-50">
