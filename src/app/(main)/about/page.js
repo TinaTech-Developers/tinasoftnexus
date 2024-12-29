@@ -5,6 +5,8 @@ import SubHero from "../components/SubHero";
 import Loading from "@/app/loading";
 import OurBelief from "./_components/OurBelief";
 import CorePrinciples from "./_components/CorePrinciples";
+import Address from "./_components/Address";
+import AboutInfo from "./_components/About";
 
 function About() {
   return (
@@ -16,7 +18,7 @@ function About() {
           "TinaSoft NEXUS specializes in innovative ICT solutions that drive efficiency and support digital transformation."
         }
       />
-
+      <AboutInfo />
       <div className=" my-10">
         <div className="flex flex-col items-center justify-center">
           <p className="uppercase font-semibold text-sm text-blue-400">
@@ -32,8 +34,7 @@ function About() {
       </div>
       <CorePrinciples />
       <OurBelief />
-
-      <Loading />
+      <Address />
     </MainLayout>
   );
 }

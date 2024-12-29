@@ -1,3 +1,48 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/* In global.css or your component's CSS module */
+
+/* Define the closing effect (for the outgoing image) */
+@keyframes closeEffect {
+  0% {
+    /* Initially, the image is whole */
+    clip-path: inset(0% 0% 0% 0%);
+  }
+  25% {
+    /* Start "closing" effect */
+    clip-path: inset(0% 40% 0% 0%);
+  }
+  50% {
+    clip-path: inset(0% 60% 0% 20%);
+  }
+  75% {
+    clip-path: inset(0% 80% 0% 40%);
+  }
+  100% {
+    /* Fully closed */
+    clip-path: inset(0% 0% 0% 0%);
+  }
+}
+
+/* Define the opening effect (for the incoming image) */
+@keyframes openEffect {
+  0% {
+    /* Initially, the image is closed */
+    clip-path: inset(0% 0% 0% 0%);
+  }
+  25% {
+    /* Start "opening" effect */
+    clip-path: inset(0% 40% 0% 0%);
+  }
+  50% {
+    clip-path: inset(0% 60% 0% 20%);
+  }
+  75% {
+    clip-path: inset(0% 80% 0% 40%);
+  }
+  100% {
+    /* Fully opened */
+    clip-path: inset(0% 0% 0% 0%);
+  }
+}

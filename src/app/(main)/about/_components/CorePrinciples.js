@@ -32,9 +32,9 @@ function CorePrinciples() {
             opacity: 1,
           }}
           transition={{ duration: 2.8 }}
-          className="p-4 md:h-24 h-full w-full border shadow-2xl bg-blue-950"
+          className="p-4 md:h-28 h-full w-full border shadow-2xl bg-blue-950"
         >
-          <div class="md:h-16 h-full border-l-4 px-2 md:pl-6 border-blue-500">
+          <div class="md:h-[75px] h-full border-l-4 px-2 md:pl-6 border-blue-500">
             <h1 className="text-xl py-1 text-blue-500">Vision</h1>
             <p className="text-white">
               To be the leading IT solutions provider in Zimbabwe, renowned for

@@ -75,8 +75,8 @@ function OurBelief() {
       <div
         ref={divRefs[1]}
         className="transform transition-transform duration-300 ease-in-out
-        translate-y-[-150px] hover:translate-y-[-170px] mx-auto
-        flex items-center justify-center w-44 h-44 hover:shadow-2xl bg-blue-950 m-10 rounded-full shadow-xl z-10"
+        md:translate-y-[-150px] hover:translate-y-[-170px] mx-auto
+        flex items-center justify-center w-44 h-44 hover:shadow-2xl bg-blue-950 m-10 rounded-full shadow-xl z-10 "
       >
         <div className="w-40 h-40 border-y-4 rounded-full border-x-4 hover:border-blue-500 border-white flex items-center justify-center">
           <p className="text-center text-white text-sm px-2 font-semibold">
@@ -103,7 +103,7 @@ function OurBelief() {
       <div
         ref={divRefs[3]}
         className="transform transition-transform duration-300 ease-in-out
-        translate-y-[-150px] hover:translate-y-[-170px] mx-auto
+        md:translate-y-[-150px] hover:translate-y-[-170px] mx-auto
         flex items-center justify-center w-44 h-44 hover:shadow-2xl bg-blue-950 m-10 rounded-full shadow-xl z-10"
       >
         <div className="w-40 h-40 border-y-4 rounded-full border-x-4 hover:border-blue-500 border-white flex items-center justify-center">
