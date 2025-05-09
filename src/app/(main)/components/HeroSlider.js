@@ -21,7 +21,7 @@ export default function HeroSlider() {
       <Swiper
         centeredSlides={true}
         autoplay={{
-          delay: 10000,
+          delay: 20000,
           disableOnInteraction: false,
         }}
         modules={[Autoplay, Pagination, Navigation]}
@@ -30,7 +30,7 @@ export default function HeroSlider() {
         <SwiperSlide>
           <Hero />
           <SimpleServices
-            image={"/coding.jpg"}
+            image={"/homm.jpg"}
             title={"Software Services"}
             subtitle={
               "   Unlock Your Vision with Our Tailored Software Development Process"
