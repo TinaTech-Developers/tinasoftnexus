@@ -1,4 +1,4 @@
-import Image from "next/image";
+"use client";
 import About from "./(main)/components/About";
 import Button from "./(main)/components/Button";
 import ClientNeeds from "./(main)/components/ClientNeeds";
@@ -10,6 +10,7 @@ import Promotion from "./(main)/components/Promotion";
 import Services from "./(main)/components/Services";
 import Testimonials from "./(main)/components/Testimonials";
 import OurExpertise from "./(main)/components/OurExpertise";
+import AboutInfo from "./(main)/about/_components/About";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
 
       <About />
       <OurExpertise />
+      <AboutInfo />
       <Services />
       {/* <About /> */}
       <ClientNeeds />

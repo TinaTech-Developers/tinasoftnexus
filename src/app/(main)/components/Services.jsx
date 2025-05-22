@@ -21,15 +21,25 @@ function Services() {
         <Service
           image={"/coding.jpg"}
           heading={"Custom  Software Development"}
-          desc={
-            " At TinaSoft Nexus, we specialize in delivering tailored software solutions designed to meet your unique business needs. With our Software Development as a Service (SDaaS), you can harness the full potential of technology to drive innovation, efficiency, and growth."
-          }
           link={""}
         />
-        <Service image={"consulting.jpg"} heading={"IT Consulting"} />
-        <Service image={"/cctv1.jpeg"} heading={"CCTV Installation"} />
-        <Service image={"network1.webp"} heading={"Networking"} />
-        <Service image={"hard.jpg"} heading={"Hardware Maintenance"} />
+        <Service
+          image={"/mobil.png"}
+          heading={"Mobile App Development"}
+          link={""}
+        />
+        <Service image={"consulting.jpg"} heading={"IT Consulting"} link={""} />
+        <Service
+          image={"/cctv1.jpeg"}
+          heading={"CCTV Installation"}
+          link={""}
+        />
+        <Service image={"network1.webp"} heading={"Networking"} link={""} />
+        <Service
+          image={"hard.jpg"}
+          heading={"Hardware Maintenance"}
+          link={""}
+        />
       </div>
     </div>
   );

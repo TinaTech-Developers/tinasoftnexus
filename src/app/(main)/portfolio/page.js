@@ -8,7 +8,7 @@ function Portfolio() {
   return (
     <MainLayout>
       <SubHero
-        image={"/giphy2.gif"}
+        image={"/p.jpg"}
         heading={"Our Digital Solutions"}
         text={
           "TinaSoft NEXUS delivers innovative ICT solutions that empower businesses to thrive."
