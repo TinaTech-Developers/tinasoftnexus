@@ -31,7 +31,7 @@ function About() {
             About us
           </motion.h1>
         </div>
-        <div className="col-span-1 md:col-span-2 p-10">
+        <div className="col-span-1 md:col-span-2 p-4 md:p-10">
           <h1 className="pb-10">
             Welcome to TinaSoft Nexus, your trusted partner in digital
             transformation. With a passion for innovation and customer success,

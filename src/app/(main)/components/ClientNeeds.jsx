@@ -6,7 +6,7 @@ import Image from "next/image";
 
 function ClientNeeds() {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 h-[80vh] mb-24">
+    <div className="grid grid-cols-1 md:grid-cols-2 h-[80vh] md:mb-24">
       <div className="col-span-1 flex flex-col items-center justify-center bg-blue-950 text-white py-10">
         <motion.div
           initial={{ y: -100, opacity: 0 }}

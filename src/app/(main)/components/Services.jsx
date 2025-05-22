@@ -17,7 +17,7 @@ function Services() {
           <span class="hidden md:block max-w-[13%] py-[2px] transition-all duration-500 h-0.5 bg-blue-400  translate-x-[195px] -translate-y-2"></span>
         </h1>
       </div> */}
-      <div className="grid grid-cols-1 md:grid-cols-3  mx-10 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-3  mx-auto gap-4">
         <Service
           image={"/coding.jpg"}
           heading={"Custom  Software Development"}
@@ -54,7 +54,7 @@ function Service({ image, heading, link }) {
         color: "white",
       }}
       transition={{ duration: 0.9 }}
-      className="flex flex-col w-80 h-full md:w-full bg-white shadow-2xl  bg-transparent rounded-lg my-5 text-gray-600 p-5 items-center "
+      className="flex flex-col w-80 h-full md:w-full bg-white shadow-2xl  bg-transparent rounded-lg my-5 text-gray-600 p-5 items-center mx-auto "
     >
       <div className="flex items-center justify-center w-32 h-10 bg-blue-900 opacity-75 absolute text-white font-semibold ">
         TinaSoft

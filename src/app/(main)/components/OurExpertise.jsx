@@ -44,7 +44,7 @@ function OurExpertise() {
 
 const OurExpertiseCard = ({ icon, heading }) => {
   return (
-    <div className="col-span-1 mx-5 w-[90%] bg-blue-100 h-40  items-center justify-center text-black hover:bg-blue-950 hover:text-white rounded-lg">
+    <div className="col-span-1 mx-4 w-[90%] bg-blue-100 h-40  items-center justify-center text-black hover:bg-blue-950 hover:text-white rounded-lg p-2">
       <div className="flex flex-col items-center justify-center h-full">
         {icon}
         <h1 className="text-xl text-center font-bold my-4"> {heading}</h1>
