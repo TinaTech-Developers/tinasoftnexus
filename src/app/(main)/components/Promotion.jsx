@@ -3,7 +3,7 @@ import Button from "./Button";
 
 function Promotion() {
   return (
-    <div className="mt-96 md:mt-0 bg-fixed bg-[url('/coding.jpg')]">
+    <div className="mt-6 md:mt-0 bg-fixed bg-[url('/coding.jpg')]">
       <div className="flex flex-col bg-scroll bg-blue-950 w-full h-full  bg-opacity-70 items-center justify-center px-20">
         <h1 className="text-center text-2xl md:text-4xl py-10 pt-32 text-white font-semibold">
           Talk to us about your needs
