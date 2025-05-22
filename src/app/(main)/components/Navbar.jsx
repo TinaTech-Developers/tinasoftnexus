@@ -89,12 +89,12 @@ function Navbar() {
               </span>
               {/* Dropdown menu for "Services" */}
               {link.dropdown && dropdownOpen && (
-                <ul className="absolute left-0 mt-2 bg-white shadow-lg rounded-lg w-36 z-50">
+                <ul className="absolute left-0 mt-2 bg-white shadow-lg rounded- w-36 md:w-48  z-50">
                   {link.dropdown.map((subLink) => (
                     <li key={subLink.name} className="hover:bg-gray-100">
                       <a
                         href={subLink.link} // This allows navigation to sub-links
-                        className="block group px-4 py-1 text-sm text-gray-800 hover:text-blue-950"
+                        className="block group px-4 py-1 text-sm md:text-[1rem] text-gray-800 hover:text-blue-950"
                       >
                         {subLink.name}
                         <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-blue-950"></span>

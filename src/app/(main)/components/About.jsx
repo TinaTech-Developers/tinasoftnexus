@@ -2,11 +2,14 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Button from "./Button";
-import Image from "next/image";
 
 function About() {
   return (
-    <>
+    <motion.div
+      initial={{ y: 100, opacity: 0 }}
+      whileInView={{ y: 0, opacity: 1 }}
+      transition={{ duration: 1.5 }}
+    >
       <div className="flex flex-col items-center justify-center ">
         <h1 className=" group text-blue-950  text-center my-10 text-2xl md:text-3xl uppercase ">
           Who Are We?
@@ -45,7 +48,7 @@ function About() {
           </div>
         </div>
       </div>
-    </>
+    </motion.div>
   );
 }
 

@@ -6,9 +6,9 @@ import Typewriter from "typewriter-effect";
 
 function SimpleServices({ image, title, subtitle, description }) {
   return (
-    <div className="w-[95%] grid grid-cols-1 md:grid-cols-2 mx-auto -translate-y-14 bg-white shadow-2xl">
+    <div className="w-[95%] grid grid-cols-1 md:grid-cols-2 mx-auto -translate-y-14 bg-white shadow-2xl border-4 border-blue-900 rounded-g">
       <div className="col-span-1 md:flex m-5">
-        <div className="flex flex-col items-start justify-center bg-scroll bg-[url('/blue.jpg')] object-cover w-full md:w-[50%] md:h-96 h-80 ">
+        <div className="flex flex-col items-start justify-center bg-scroll bg-[url('/blue.jpg')] object-cover w-full md:w-[50%] md:h-96 h-80 bg-blue-950">
           <div className="ml-4 text-white ">
             <h1 className="text-2xl md:text-3xl   font-bold">
               Welcome To

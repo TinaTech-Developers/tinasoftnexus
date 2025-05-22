@@ -9,15 +9,15 @@ import Image from "next/image";
 function Services() {
   return (
     <div className="bg-blue-100 py-10 md:pb-20  h-full">
-      <div className="flex flex-col items-center justify-center ">
+      {/* <div className="flex flex-col items-center justify-center ">
         <h1 className=" group text-blue-950 text-center my-5 text-2xl md:text-3xl uppercase ">
           Digital Solutions
           <span class="block w-[100%] md:max-w-[55%] py-[2px] transition-all duration-500 h-0.5 bg-blue-950 mt-2 "></span>
           <span class="hidden md:block max-w-[25%] py-[2px] transition-all duration-500 h-0.5 bg-blue-700  translate-x-[130px] -translate-y-1"></span>
           <span class="hidden md:block max-w-[13%] py-[2px] transition-all duration-500 h-0.5 bg-blue-400  translate-x-[195px] -translate-y-2"></span>
         </h1>
-      </div>
-      <div className="grid grid-cols-1 md:grid-cols-3  mx-auto gap-4">
+      </div> */}
+      <div className="grid grid-cols-1 md:grid-cols-3  mx-10 gap-4">
         <Service
           image={"/coding.jpg"}
           heading={"Custom  Software Development"}
@@ -35,7 +35,7 @@ function Services() {
   );
 }
 
-function Service({ image, heading, desc, link }) {
+function Service({ image, heading, link }) {
   return (
     <motion.div
       initial={{
@@ -54,7 +54,7 @@ function Service({ image, heading, desc, link }) {
         color: "white",
       }}
       transition={{ duration: 0.9 }}
-      className="flex flex-col w-80 h-full md:w-96 border border-blue-950  bg-transparent rounded-lg my-5 mx-auto text-gray-600 p-5 items-center"
+      className="flex flex-col w-80 h-full md:w-full bg-white shadow-2xl  bg-transparent rounded-lg my-5 text-gray-600 p-5 items-center "
     >
       <div className="flex items-center justify-center w-32 h-10 bg-blue-900 opacity-75 absolute text-white font-semibold ">
         TinaSoft
@@ -73,8 +73,8 @@ function Service({ image, heading, desc, link }) {
           className="w-80 md:w-96 h-72 object-cover transition-transform duration-300 transform group-hover:scale-125"
         />
       </div>
-      <h1 className="text-xl font-semibold py-4 ">{heading}</h1>
-      <p className="">{desc}</p>
+      <h1 className="text-xl font-semibold pt-4 ">{heading}</h1>
+
       <div className="w-20 md:w-[98px] mt-4 z-10">
         <Button name={"More Info"} link={"/portfolio"} />
       </div>

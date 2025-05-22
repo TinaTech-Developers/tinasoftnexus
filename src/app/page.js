@@ -9,6 +9,7 @@ import Partners from "./(main)/components/Partners";
 import Promotion from "./(main)/components/Promotion";
 import Services from "./(main)/components/Services";
 import Testimonials from "./(main)/components/Testimonials";
+import OurExpertise from "./(main)/components/OurExpertise";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <HeroSlider />
 
       <About />
+      <OurExpertise />
       <Services />
       {/* <About /> */}
       <ClientNeeds />
