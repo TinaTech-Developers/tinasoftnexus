@@ -6,16 +6,22 @@ import Typewriter from "typewriter-effect";
 
 function ServicesSubHero({ image, desc, directory }) {
   return (
-    <div className="bg-scroll bg-[url('/  ')] object-cover bg-no-repeat w-full h-full md:h-[500px] ">
-      <div className="bg-scroll bg-blue-500 bg-opacity-5 h-[500px]">
+    <div className="bg-scroll object-cover bg-no-repeat w-full h-[550px] md:h-[550px]">
+      <div className="relative h-[550px]">
+        {/* Background Image */}
         <Image
           src={image}
           alt=""
-          height={300}
-          width={600}
-          className="absolute w-full h-full md:h-[500px] object-cover"
+          priority
+          quality={100}
+          fill
+          className="absolute w-full h-full object-cover"
         />
-        <div className="px-6 translate-y-80 md:pl-36 ">
+
+        {/* Dark Overlay */}
+        <div className="absolute inset-0 bg-black opacity-60 z-10" />
+
+        <div className="px-6 translate-y-80 md:pl-36 z-20 relative">
           <motion.h1
             initial={{
               x: -100,
