@@ -15,6 +15,9 @@ import {
   MdSupportAgent,
 } from "react-icons/md";
 import { GrCloudSoftware, GrHost, GrHostMaintenance } from "react-icons/gr";
+import FAQ from "./_components/FAQs";
+import Testimonials from "../../components/Testimonials";
+import WebCallToAction from "./_components/WebCallToAction";
 
 function page() {
   return (
@@ -147,6 +150,12 @@ function page() {
           }
         />
       </section>
+      {/* FAQs */}
+      <FAQ />
+      {/* Testimonials */}
+      <Testimonials />
+      {/* Call to Action Section */}
+      <WebCallToAction />
     </ServicesLayout>
   );
 }
@@ -158,11 +167,11 @@ function ServicesLayouts({ icon, heading, desc }) {
       transition={{ duration: 0.7 }}
       className="mt-4"
     >
-      <div className="grid grid-cols-1 md:grid-cols-6 gap-2 mb-2">
-        <div className="col-span-1 items-center text-gray-900 justify-center flex border p-4 shadow-lg bg-blue-200">
+      <div className="grid grid-cols-1 md:grid-cols-6 gap-2 mb-2 ">
+        <div className="col-span-1 items-center h-36 md:h-full text-gray-900 justify-center flex border p-4 shadow-lg bg-blue-200">
           {icon}
         </div>
-        <div className="col-span-5 border p-4 shadow-lg bg-white ">
+        <div className="col-span-1 md:col-span-5 border p-4 shadow-lg bg-white ">
           <h2 className="font-semibold text-lg md:text-xl mb-2 text-gray-900">
             {heading}
           </h2>

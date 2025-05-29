@@ -16,7 +16,6 @@ export default function Home() {
   return (
     <MainLayout>
       <HeroSlider />
-
       <About />
       <OurExpertise />
       <AboutInfo />

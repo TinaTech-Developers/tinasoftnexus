@@ -4,6 +4,7 @@ import MainLayout from "../components/Layout";
 import SubHero from "../components/SubHero";
 import EmailnAddress from "./_components/EmailandAddress";
 import ClientNeeds from "../components/ClientNeeds";
+import MultipleContactMethods from "./_components/MultipleContactMethods";
 
 function Contact() {
   return (
@@ -16,6 +17,7 @@ function Contact() {
         }
       />
       <EmailnAddress />
+      <MultipleContactMethods />
       <ClientNeeds />
     </MainLayout>
   );

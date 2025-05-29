@@ -3,6 +3,7 @@ import Image from "next/image";
 import React from "react";
 import { motion } from "framer-motion";
 import Typewriter from "typewriter-effect";
+import Link from "next/link";
 
 function Hero() {
   return (
@@ -37,6 +38,14 @@ function Hero() {
                 strings: ["Web & Sofware Solutions"],
               }}
             />
+          </div>
+          <div className="mt-4">
+            <Link
+              className={`text-xs md:text-sm py-2 relative md:px-4 px-2 border  bg-transparent text-blue-950 transition-colors before:absolute before:left-0 before:top-0 before:-z-10 before:h-full before:w-full before:origin-top-left before:scale-x-0 before:bg-blue-950 before:transition-transform before:duration-300 before:content-[''] hover:text-white before:hover:scale-x-100 `}
+              href={"/contact"}
+            >
+              Speak To Sales
+            </Link>
           </div>
         </div>
       </div>
