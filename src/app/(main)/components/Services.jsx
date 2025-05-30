@@ -21,24 +21,24 @@ function Services() {
         <Service
           image={"/coding.jpg"}
           heading={"Custom  Software Development"}
-          link={""}
+          link={"/services/software"}
         />
         <Service
           image={"/mobil.png"}
           heading={"Mobile App Development"}
-          link={""}
+          link={"/services/software"}
         />
         <Service image={"consulting.jpg"} heading={"IT Consulting"} link={""} />
         <Service
           image={"/cctv1.jpeg"}
           heading={"CCTV Installation"}
-          link={""}
+          link={"/services/cctv"}
         />
         <Service image={"network1.webp"} heading={"Networking"} link={""} />
         <Service
           image={"hard.jpg"}
           heading={"Hardware Maintenance"}
-          link={""}
+          link={"/services/hardware-repair"}
         />
       </div>
     </div>
@@ -66,13 +66,13 @@ function Service({ image, heading, link }) {
       transition={{ duration: 0.9 }}
       className="flex flex-col w-80 h-full md:w-full bg-white shadow-2xl  bg-transparent rounded-lg my-5 text-gray-600 p-5 items-center mx-auto "
     >
-      <div className="flex items-center justify-center w-32 h-10 bg-blue-900 opacity-75 absolute text-white font-semibold ">
+      {/* <div className="flex items-center justify-center w-32 h-10 bg-blue-900 opacity-75 absolute text-white font-semibold ">
         TinaSoft
         <span className="text-xs text-blue-300 translate-x-2 mt-2">
           <br />
           NEXUS
         </span>
-      </div>
+      </div> */}
       <div className=" tile relative overflow-hidden group">
         {/* <div> {icon}</div> */}
         <Image

@@ -19,14 +19,14 @@ function Partners() {
     <div className=" hidden md:block my  ">
       <div className="flex flex-col items-center justify-center">
         <h1 className=" group text-blue-950  text-center my-10 text-3xl uppercase ">
-          Our Partners
-          <span class="block w-[100%] md:max-w-[55%] py-[2px] transition-all duration-500 h-0.5 bg-blue-950 mt-2 "></span>
-          <span class="hidden md:block max-w-[25%] py-[2px] transition-all duration-500 h-0.5 bg-blue-700  translate-x-[130px] -translate-y-1"></span>
-          <span class="hidden md:block max-w-[13%] py-[2px] transition-all duration-500 h-0.5 bg-blue-400  translate-x-[195px] -translate-y-2"></span>
+          Our Clients
+          <span class="block w-[100%] md:max-w-[45%] py-[2px] transition-all duration-500 h-0.5 bg-blue-950 mt-2 "></span>
+          <span class="hidden md:block max-w-[25%] py-[2px] transition-all duration-500 h-0.5 bg-blue-700  translate-x-[100px] -translate-y-1"></span>
+          <span class="hidden md:block max-w-[13%] py-[2px] transition-all duration-500 h-0.5 bg-blue-400  translate-x-[165px] -translate-y-2"></span>
         </h1>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-4 gap-5 mx-auto">
-        <div className="col-span-1 bg-blue-950 h-52 flex flex-col items-center justify-center text-xl text-white">
+        <div className="col-span-1 bg-blue-950 h-52 flex flex-col items-center justify-center text-xl text-white border-4 border-blue-400">
           <p className="text-center">
             We are solution-oriented and committed to solving the business
             issues of our clients.

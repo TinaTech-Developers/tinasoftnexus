@@ -1,7 +1,10 @@
+"use client";
+import { motion } from "framer-motion";
 import React from "react";
 import { FaNetworkWired } from "react-icons/fa6";
 import { GrCloudComputer, GrSystem } from "react-icons/gr";
 import { IoHardwareChipSharp } from "react-icons/io5";
+import Link from "next/link";
 function OurExpertise() {
   return (
     <div className=" flex flex-col items-center justify-center">
@@ -23,18 +26,22 @@ function OurExpertise() {
           <OurExpertiseCard
             icon={<GrSystem size={55} />}
             heading={"Custom Software Development"}
+            link={"/services/software"}
           />
           <OurExpertiseCard
             icon={<GrCloudComputer size={55} />}
             heading={"Cloud Computing Solutions"}
+            link={"/services/cloud-computing"}
           />
           <OurExpertiseCard
             heading={"Networking Infrastructure"}
             icon={<FaNetworkWired size={55} />}
+            link={"/services/networking"}
           />
           <OurExpertiseCard
             icon={<IoHardwareChipSharp size={55} />}
             heading={"Hardware Maintenance & Support"}
+            link={"/services/hardware-repair"}
           />
         </div>
       </div>
@@ -42,14 +49,29 @@ function OurExpertise() {
   );
 }
 
-const OurExpertiseCard = ({ icon, heading }) => {
+const OurExpertiseCard = ({ icon, heading, link }) => {
   return (
-    <div className="col-span-1 mx-4 w-[90%] bg-blue-100 h-40  items-center justify-center text-black hover:bg-blue-950 hover:text-white rounded-lg p-2">
-      <div className="flex flex-col items-center justify-center h-full">
+    <motion.div
+      initial={{
+        opacity: 0,
+        scale: 0,
+        x: -100,
+      }}
+      whileInView={{
+        opacity: 1,
+        scale: 1,
+        x: 0,
+      }}
+      className="col-span-1 mx-4 w-[90%] bg-blue-100 h-40  items-center justify-center text-black hover:bg-blue-950 hover:text-white rounded-lg p-2"
+    >
+      <Link
+        href={link}
+        className="flex flex-col items-center justify-center h-full"
+      >
         {icon}
         <h1 className="text-xl text-center font-bold my-4"> {heading}</h1>
-      </div>
-    </div>
+      </Link>
+    </motion.div>
   );
 };
 export default OurExpertise;

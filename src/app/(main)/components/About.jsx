@@ -2,6 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Button from "./Button";
+import Image from "next/image";
 
 function About() {
   return (
@@ -19,17 +20,23 @@ function About() {
         </h1>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 w-[95%] mx-auto mb-10">
-        <div className="col-span-1 bg-blue-950 text-white h-80 flex flex-col items-center justify-center ">
-          <motion.h1
+        <div className="col-span-1 bg-blue-950 text-white h-80 flex flex-col items-center justify-center p-4">
+          <motion.div
             initial={{ x: 0, scale: 0 }}
             whileInView={{ x: 0, scale: 1 }}
             transition={{
               duration: 0.8,
             }}
-            className="text-4xl font-semibold"
+            className="w-full h-full flex items-center justify-center  border-2 border-white"
           >
-            About us
-          </motion.h1>
+            <Image
+              src={"/logo1.png"}
+              alt="tinasoftlogo"
+              height={100}
+              width={200}
+              className=" w-full h-full p-4 md:p-10 object-contain "
+            />
+          </motion.div>
         </div>
         <div className="col-span-1 md:col-span-2 p-4 md:p-10">
           <h1 className="pb-10">
