@@ -64,15 +64,19 @@ export default function ICTConsultingServices() {
         </p>
       </div>
 
-      <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+      <motion.div
+        initial={{ y: 100, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.7 }}
+        className="grid gap-8 md:grid-cols-2 lg:grid-cols-3"
+      >
         {services.map((service, index) => (
           <motion.div
             key={index}
             className="bg-blue-950 border border-cyan-800 p-6 rounded-2xl shadow-md hover:shadow-cyan-500/30 transition duration-300"
-            initial={{ y: 100, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.4, delay: index * 0.5 }}
-            viewport={{ once: true }}
+            // initial={{ y: 100, opacity: 0 }}
+            // whileInView={{ y: 0, opacity: 1 }}
+            // transition={{ duration: 0.7 }}
           >
             <div className="mb-4">{service.icon}</div>
             <h3 className="text-xl font-semibold text-white mb-2">
@@ -83,7 +87,7 @@ export default function ICTConsultingServices() {
             </p>
           </motion.div>
         ))}
-      </div>
+      </motion.div>
     </section>
   );
 }

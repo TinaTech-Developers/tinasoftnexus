@@ -47,29 +47,42 @@ export default function CCTVServices() {
           Our CCTV Solutions
         </motion.h2> */}
       </div>
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-        {services.map(({ title, desc, icon }, index) => (
-          <motion.div
-            key={index}
-            custom={index}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-            variants={cardVariants}
-            whileHover={{
-              scale: 1.05,
-              boxShadow: "0 10px 20px rgba(59, 130, 246, 0.3)",
-            }}
-            className="relative bg-white rounded-xl p-8 shadow-md cursor-pointer flex flex-col items-start"
-          >
-            <div className="text-5xl mb-6 text-blue-600">{icon}</div>
-            <h4 className="text-xl font-semibold mb-3 text-gray-900">
-              {title}
-            </h4>
-            <p className="text-gray-600">{desc}</p>
-            <div className="absolute top-4 right-4 w-14 h-14 bg-gradient-to-tr from-blue-300 to-blue-600 rounded-full opacity-20 -z-10"></div>
-          </motion.div>
-        ))}
+
+      <div
+        className="w-full bg-cover bg-center min-h-[600px] py-20 px-4"
+        style={{
+          backgroundImage: "url('/homm.jpg')", // replace with real image path
+        }}
+      >
+        <motion.div
+          initial={{ y: 100, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.7 }}
+          className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8"
+        >
+          {services.map(({ title, desc, icon }, index) => (
+            <motion.div
+              key={index}
+              custom={index}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.3 }}
+              variants={cardVariants}
+              whileHover={{
+                scale: 1.05,
+                boxShadow: "0 10px 20px rgba(59, 130, 246, 0.3)",
+              }}
+              className="relative bg-white rounded-xl p-8 shadow-md cursor-pointer flex flex-col items-start"
+            >
+              <div className="text-5xl mb-6 text-blue-600">{icon}</div>
+              <h4 className="text-xl font-semibold mb-3 text-gray-900">
+                {title}
+              </h4>
+              <p className="text-gray-600">{desc}</p>
+              <div className="absolute top-4 right-4 w-14 h-14 bg-gradient-to-tr from-blue-300 to-blue-600 rounded-full opacity-20 -z-10"></div>
+            </motion.div>
+          ))}
+        </motion.div>
       </div>
     </section>
   );

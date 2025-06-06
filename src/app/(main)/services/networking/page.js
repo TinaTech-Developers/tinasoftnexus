@@ -1,9 +1,11 @@
+"use client";
 import React from "react";
 import ServicesLayout from "../_components/ServicesLayout";
 import ServicesSubHero from "../_components/ServicesSubHero";
 import Testimonials from "../../components/Testimonials";
 import FAQ from "./_components/FAQs";
 import NetworkingCallToAction from "./_components/NetworkingCallToAction";
+import { motion } from "framer-motion";
 
 function page() {
   return (
@@ -45,7 +47,12 @@ function page() {
             "url('/Artificial Intelligence Technology GIF - Find & Share on GIPHY.gif')",
         }}
       >
-        <div className="max-w-7xl mx-auto">
+        <motion.div
+          initial={{ y: 100, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.7 }}
+          className="max-w-7xl mx-auto"
+        >
           <h3 className="text-4xl font-bold text-center text-white mb-16 drop-shadow-lg">
             Our Networking Services
           </h3>
@@ -78,10 +85,15 @@ function page() {
               </div>
             ))}
           </div>
-        </div>
+        </motion.div>
       </div>
       <section className="bg-white py-12 px-6 text-center">
-        <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8">
+        <motion.div
+          initial={{ y: 100, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.7 }}
+          className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8"
+        >
           {[
             { label: "Clients Served", value: "250+" },
             { label: "Uptime Guarantee", value: "99.99%" },
@@ -93,10 +105,15 @@ function page() {
               <p className="text-gray-700">{stat.label}</p>
             </div>
           ))}
-        </div>
+        </motion.div>
       </section>
       <section className="bg-gray-100 py-16 px-6">
-        <div className="max-w-6xl mx-auto text-center">
+        <motion.div
+          initial={{ y: 100, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.7 }}
+          className="max-w-6xl mx-auto text-center"
+        >
           <h2 className="text-3xl font-bold mb-6">
             Why Choose TinaSoft Nexus?
           </h2>
@@ -125,7 +142,7 @@ function page() {
               </div>
             ))}
           </div>
-        </div>
+        </motion.div>
       </section>
       <Testimonials />
       <FAQ />

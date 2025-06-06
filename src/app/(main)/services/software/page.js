@@ -1,9 +1,11 @@
+"use client";
 import React from "react";
 import ServicesLayout from "../_components/ServicesLayout";
 import ServicesSubHero from "../_components/ServicesSubHero";
 import Testimonials from "../../components/Testimonials";
 import FAQ from "./_components/FAQs";
 import SoftwareCallToAction from "./_components/SoftwareCallToAction";
+import { motion } from "framer-motion";
 
 function page() {
   return (
@@ -51,7 +53,12 @@ function page() {
           {/* <h3 className="text-3xl font-bold mb-10 text-center text-gray-900">
             What We Build
           </h3> */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+          <motion.div
+            initial={{ y: 100, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.7 }}
+            className="grid grid-cols-1 md:grid-cols-3 gap-10"
+          >
             {[
               {
                 icon: "🖥️",
@@ -93,7 +100,7 @@ function page() {
                 <p className="text-center text-gray-700">{desc}</p>
               </div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </div>
 
