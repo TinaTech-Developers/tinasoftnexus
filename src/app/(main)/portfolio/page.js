@@ -15,7 +15,7 @@ function Portfolio() {
         }
       />
       <MiniHeader />
-      <div className="mb-10 md:mb-0">
+      <div className="mb-12 md:mb-0">
         <ClientNeeds />
       </div>
     </MainLayout>
