@@ -18,7 +18,9 @@ function Contact() {
       />
       <EmailnAddress />
       <MultipleContactMethods />
-      <ClientNeeds />
+      <div className="mb-10 md:mb-0">
+        <ClientNeeds />
+      </div>
     </MainLayout>
   );
 }
