@@ -42,8 +42,8 @@ function Testimonials() {
         <h1 className=" group text-blue-950 text-center mt-10 text-2xl md:text-3xl uppercase ">
           TESTIMONIALS
           <span class="block w-[100%] md:max-w-[55%] py-[2px] transition-all duration-500 h-0.5 bg-blue-950 mt-2 "></span>
-          <span class="hidden md:block max-w-[25%] py-[2px] transition-all duration-500 h-0.5 bg-blue-700  translate-x-[130px] -translate-y-1"></span>
-          <span class="hidden md:block max-w-[13%] py-[2px] transition-all duration-500 h-0.5 bg-blue-400  translate-x-[195px] -translate-y-2"></span>
+          <span class="hidden md:block max-w-[25%] py-[2px] transition-all duration-500 h-0.5 bg-blue-700  translate-x-[90px] -translate-y-1"></span>
+          <span class="hidden md:block max-w-[13%] py-[2px] transition-all duration-500 h-0.5 bg-blue-400  translate-x-[140px] -translate-y-2"></span>
         </h1>
       </div>
       <SliderWrapper className="mt-4">

@@ -15,8 +15,8 @@ function About() {
         <h1 className=" group text-blue-950  text-center my-10 text-2xl md:text-3xl uppercase ">
           Who Are We?
           <span class="block w-[100%] md:max-w-[55%] py-[2px] transition-all duration-500 h-0.5 bg-blue-950 mt-2 "></span>
-          <span class="hidden md:block max-w-[25%] py-[2px] transition-all duration-500 h-0.5 bg-blue-700  translate-x-[130px] -translate-y-1"></span>
-          <span class="hidden md:block max-w-[13%] py-[2px] transition-all duration-500 h-0.5 bg-blue-400  translate-x-[195px] -translate-y-2"></span>
+          <span class="hidden md:block max-w-[25%] py-[2px] transition-all duration-500 h-0.5 bg-blue-700  translate-x-[94px] -translate-y-1"></span>
+          <span class="hidden md:block max-w-[13%] py-[2px] transition-all duration-500 h-0.5 bg-blue-400  translate-x-[140px] -translate-y-2"></span>
         </h1>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 w-[95%] mx-auto mb-10">
@@ -50,7 +50,7 @@ function About() {
             dedicated to empowering businesses to thrive in the digital age. Let
             us help you take your business to the next level - contact us today!
           </h1>
-          <div className="w-20 md:w-[105px]">
+          <div className="flex items-center justify-center w-20 md:w-[95px]">
             <Button name={"View More"} link={"/"} />
           </div>
         </div>

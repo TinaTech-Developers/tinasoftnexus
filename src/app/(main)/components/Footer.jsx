@@ -26,11 +26,18 @@ function Footer() {
     { name: "Contact ", link: "/contact" },
   ];
 
+  const reasons = [
+    "10+ Years of ICT Experience",
+    "Trusted by Zim Businesses",
+    "Affordable & Scalable Solutions",
+    "24/7 Client Support",
+  ];
+
   return (
     <div className="w-full flex flex-col gap-10 bg-[#00001C]">
-      <div className="grid grid-cols-1 md:grid-cols-5 mx-auto  text-gray-500 items-center gap-5">
-        <div className="col-span-1 flex flex-col items-start justify-center px-10 gap-1">
-          <h1 className="text-start text-xl font-bold uppercase mt-5">
+      <div className="grid grid-cols-1 md:grid-cols-5 mx-auto text-gray-500 items-start gap-5 py-10">
+        <div className="col-span-1 flex flex-col items-start justify-start px-10 gap-1">
+          <h1 className="text-start text-xl font-bold uppercase mt-6 ">
             Services
           </h1>
           <div className="flex flex-col gap-1 text-sm hove:text-blue-600">
@@ -45,8 +52,8 @@ function Footer() {
             ))}
           </div>
         </div>
-        <div className="col-span-1 flex flex-col items-start justify-center gap-1 px-10">
-          <h1 className="text-start text-xl font-bold uppercase ">
+        <div className="col-span-1 flex flex-col items-start justify-start px-10 gap-1">
+          <h1 className="text-start text-xl font-bold uppercase mt-6 ">
             Quick Links
           </h1>
           <div className="flex flex-col gap-1 text-sm hove:text-blue-600">
@@ -61,11 +68,19 @@ function Footer() {
             ))}
           </div>
         </div>
-        <div className="col-span-1 flex flex-col items-start justify-center gap-1 p-10">
-          <h1 className="text-start text-xl font-bold uppercase ">Programs</h1>
+
+        <div className="col-span-1 flex flex-col items-start justify-start px-10 gap-1">
+          <h1 className="text-start text-xl font-bold uppercase mt-6 ">
+            Why Choose Us
+          </h1>
+          <ul className="text-sm list-disc ml-4 text-gray-400">
+            {reasons.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
         </div>
-        <div className="col-span-1 md:col-span-2 flex flex-col items-start justify-center p-10">
-          <h1 className="text-start text-xl font-bold uppercase ">
+        <div className="col-span-1 md:col-span-2 flex flex-col items-start justify-start px-10 gap-1">
+          <h1 className="text-start text-xl font-bold uppercase mt-6 ">
             Newsletter
           </h1>
           <div className="grid md:flex  items-center justify-between gap-2 z-10">
@@ -74,7 +89,7 @@ function Footer() {
               name="subscription"
               className="p-2 bg-white w-[70%]"
             />
-            <div className="w-20 md:w-[104px]">
+            <div className="flex items-center justify-center w-20 md:w-[104px]">
               <Button name={"Subscribe"} link={""} />
             </div>
           </div>
@@ -101,7 +116,7 @@ function Footer() {
         <div className="col-span-1 flex justify-center items-center">
           <Link href={"/"}>
             <Image
-              src={"/logo1.png"}
+              src={"/logo.png"}
               alt="tinasoftlogo"
               height={100}
               width={200}
@@ -112,8 +127,8 @@ function Footer() {
         <div className="col-span-1 md:col-span-2"></div>
       </div>
       <div className="bg-blue-400 h-16 flex items-center justify-center">
-        <p className="text-xs">
-          Copyright © 2024 TinaSoft Nexus. All Rights Reserved
+        <p className="text-sm">
+          Copyright © 2025 TinaSoft Nexus. All Rights Reserved
         </p>
       </div>
     </div>

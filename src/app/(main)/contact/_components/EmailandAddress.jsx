@@ -37,10 +37,10 @@ function EmailAndAddress() {
 
     emailjs
       .sendForm(
-        "service_fh9gnqf",
-        "template_pfws2qh",
+        "service_buyh98n",
+        "template_jp91x36",
         form.current,
-        "NKEqxewRiSKRnxvh6"
+        "xlsV0b9q84sM-rKdh"
       )
       .then(
         () => {

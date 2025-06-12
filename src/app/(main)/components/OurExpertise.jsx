@@ -16,8 +16,8 @@ function OurExpertise() {
           <h1 className=" group text-blue-950 text-center  text-2xl md:text-3xl uppercase ">
             Our Expertise
             <span class="block w-[100%] md:max-w-[55%] py-[2px] transition-all duration-500 h-0.5 bg-blue-950 mt-2  "></span>
-            <span class="hidden md:block max-w-[25%] py-[2px] transition-all duration-500 h-0.5 bg-blue-700  translate-x-[110px] -translate-y-1 md:ml-7"></span>
-            <span class="hidden md:block max-w-[13%] py-[2px] transition-all duration-500 h-0.5 bg-blue-400  translate-x-[165px] -translate-y-2 md:ml-10"></span>
+            <span class="hidden md:block max-w-[25%] py-[2px] transition-all duration-500 h-0.5 bg-blue-700  translate-x-[74px] -translate-y-1 md:ml-7"></span>
+            <span class="hidden md:block max-w-[13%] py-[2px] transition-all duration-500 h-0.5 bg-blue-400  translate-x-[110px] -translate-y-2 md:ml-10"></span>
           </h1>
         </div>
       </div>
