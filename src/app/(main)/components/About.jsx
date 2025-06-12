@@ -30,7 +30,7 @@ function About() {
             className="w-full h-full flex items-center justify-center  border-2 border-white"
           >
             <Image
-              src={"/logo1.png"}
+              src={"/logo.png"}
               alt="tinasoftlogo"
               height={100}
               width={200}
@@ -51,7 +51,7 @@ function About() {
             us help you take your business to the next level - contact us today!
           </h1>
           <div className="flex items-center justify-center w-20 md:w-[95px]">
-            <Button name={"View More"} link={"/"} />
+            <Button name={"View More"} link={"/about"} />
           </div>
         </div>
       </div>
