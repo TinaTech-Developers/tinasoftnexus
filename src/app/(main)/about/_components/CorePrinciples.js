@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
+import Typewriter from "typewriter-effect";
 
 function CorePrinciples() {
   return (
@@ -36,11 +37,17 @@ function CorePrinciples() {
         >
           <div class="md:h-[75px] h-full border-l-4 px-2 md:pl-6 border-blue-500">
             <h1 className="text-xl py-1 text-blue-500">Vision</h1>
-            <p className="text-white">
-              To be the leading IT solutions provider in Zimbabwe, renowned for
-              excellence, reliability, and sustainability, connecting people,
-              businesses, and technologies to unlock limitless possibilities.
-            </p>
+            <div className="text-white">
+              <Typewriter
+                options={{
+                  autoStart: true,
+                  loop: false,
+                  delay: 50,
+                  strings:
+                    "To be the leading IT solutions provider in Zimbabwe, renowned for excellence, reliability, and sustainability, connecting people, businesses, and technologies to unlock limitless possibilities.",
+                }}
+              />
+            </div>
           </div>
         </motion.div>
         <motion.div
@@ -57,12 +64,17 @@ function CorePrinciples() {
         >
           <div class="md:h-[75px] h-full border-l-4 px-2 md:pl-6 border-blue-500">
             <h1 className="text-xl py-1 text-blue-500">Mission</h1>
-            <p className="text-white">
-              At TinaSoft Nexus, we harness the power of technology to enrich
-              lives, drive business success, and bridge the digital divide,
-              providing customer-centric IT solutions with integrity, passion,
-              and excellence.
-            </p>
+            <div className="text-white">
+              <Typewriter
+                options={{
+                  autoStart: true,
+                  loop: false,
+                  delay: 50,
+                  strings:
+                    " At TinaSoft Nexus, we harness the power of technology to enrich lives, drive business success, and bridge the digital divide, providing customer-centric IT solutions with integrity, passion, and excellence.",
+                }}
+              />
+            </div>
           </div>
         </motion.div>
         <motion.div
@@ -81,11 +93,17 @@ function CorePrinciples() {
             <h1 className="text-xl py-1 text-blue-500">
               Unique Selling Proposition (USP)
             </h1>
-            <p className="text-white">
-              : TinaSoft Nexus connects Zimbabwe to the global digital
-              landscape, delivering tailored IT solutions that drive growth,
-              innovation, and social impact.
-            </p>
+            <div className="text-white">
+              <Typewriter
+                options={{
+                  autoStart: true,
+                  loop: false,
+                  delay: 50,
+                  strings:
+                    ": TinaSoft Nexus connects Zimbabwe to the global digital landscape, delivering tailored IT solutions that drive growth, innovation, and social impact.",
+                }}
+              />
+            </div>
           </div>
         </motion.div>
         <motion.div
@@ -103,25 +121,80 @@ function CorePrinciples() {
           <div class="h-full border-l-4 px-2 md:pl-6 border-blue-500">
             <h1 className="text-xl py-1 text-blue-500">Core Values</h1>
             <h2 className="py-1 pt-4 text-blue-500">Customer Focus</h2>
-            <p className="text-white">
-              : We prioritize customer satisfaction and feedback
-            </p>
+            <div className="text-white">
+              <Typewriter
+                options={{
+                  autoStart: true,
+                  loop: false,
+                  delay: 50,
+                  strings:
+                    ": We prioritize our clients' needs, delivering exceptional service and value.",
+                }}
+              />
+            </div>
+
             <h2 className="py-1 pt-4 text-blue-500">Innovation</h2>
-            <p className="text-white">
-              : We embrace cutting-edge technologies and creative
-              problem-solving.
-            </p>
+            <div className="text-white">
+              <Typewriter
+                options={{
+                  autoStart: true,
+                  loop: false,
+                  delay: 50,
+                  strings:
+                    ": We embrace cutting-edge technologies and creative problem-solving.",
+                }}
+              />
+            </div>
+
             <h2 className="py-1 pt-4 text-blue-500">Integrity</h2>
-            <p className="text-white">
-              : We uphold transparency, ethics, and accountability.
-            </p>
+            <div className="text-white">
+              <Typewriter
+                options={{
+                  autoStart: true,
+                  loop: false,
+                  delay: 50,
+                  strings:
+                    ": We uphold transparency, ethics, and accountability.",
+                }}
+              />
+            </div>
+
             <h2 className="py-1 pt-4 text-blue-500">Collaboration</h2>
-            <p className="text-white">: We foster partnerships and teamwork.</p>
+            <div className="text-white">
+              <Typewriter
+                options={{
+                  autoStart: true,
+                  loop: false,
+                  delay: 50,
+                  strings: ": We foster partnerships and teamwork.",
+                }}
+              />
+            </div>
+
             <h2 className="py-1 pt-4 text-blue-500">Sustainability</h2>
-            <p className="text-white">
-              : We strive for environmentally responsible and socially impactful
-              solutions.
-            </p>
+            <div className="text-white">
+              <Typewriter
+                options={{
+                  autoStart: true,
+                  loop: false,
+                  delay: 50,
+                  strings:
+                    " : We strive for environmentally responsible and socially impactful solutions.",
+                }}
+              />
+            </div>
+
+            <div className="text-white">
+              <Typewriter
+                options={{
+                  autoStart: true,
+                  loop: false,
+                  delay: 50,
+                  strings:
+                    "  At TinaSoft Nexus, our core principles guide everything we do. We are committed to delivering exceptional value to our clients through a customer-centric approach, leveraging innovation and technology to drive business success. Our integrity and ethical standards ensure transparency and accountability in all our interactions. We believe in the power of collaboration, fostering strong partnerships with our clients and within our team. Finally, we are dedicated to sustainability, ensuring that our solutions not only meet today's needs but also contribute to a better future for all.",
+                }}
+              />
+            </div>
           </div>
         </motion.div>
       </div>

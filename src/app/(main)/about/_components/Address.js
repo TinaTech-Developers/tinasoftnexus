@@ -5,7 +5,7 @@ function Address() {
   return (
     <div className="flex flex-col  items-center justify-center bg-blue-100 gap-10 py-10 top-0">
       <Image
-        src={"/logo1.png"}
+        src={"/logo.png"}
         alt=""
         height={200}
         width={200}
