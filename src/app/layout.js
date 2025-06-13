@@ -65,7 +65,7 @@ export default function RootLayout({ children }) {
                 "@type": "PostalAddress",
                 streetAddress: "No. 4947 Springvale Park",
                 addressLocality: "Ruwa",
-                postalCode: "ZW002", // You can adjust the postal code if needed
+                postalCode: "ZW002",
                 addressCountry: "ZW",
               },
               geo: {
