@@ -71,33 +71,33 @@ function ImageSliderSoftware() {
       >
         <SwiperSlide>
           <SoftwareCard
+            image={"/soft.png"}
+            // link={"https:www.jacautopro.co.zw"}
+            company={""}
+          />
+        </SwiperSlide>
+        <SwiperSlide>
+          <SoftwareCard
+            image={"/soft1.png"}
+            // link={"https:www.jacautopro.co.zw"}
+            company={"TinaSoft NEXUS"}
+          />
+        </SwiperSlide>
+        <SwiperSlide>
+          <SoftwareCard image={"/motsi.png"} />
+        </SwiperSlide>
+        <SwiperSlide>
+          <SoftwareCard image={"/motsi1.png"} />
+        </SwiperSlide>
+        {/* <SwiperSlide>
+          <SoftwareCard image={"/tinash.png"} />
+        </SwiperSlide> */}
+        <SwiperSlide>
+          <SoftwareCard
             image={"/tina.png"}
-            link={"https:www.sitawainvestments.co.zw"}
+            // link={"https:www.sitawainvestments.co.zw"}
             company={" TinaSoft E-commerce"}
           />
-        </SwiperSlide>
-        <SwiperSlide>
-          <SoftwareCard
-            image={"/tinas.png"}
-            link={"https:www.jacautopro.co.zw"}
-            company={"TinaSoft NEXUS"}
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <SoftwareCard
-            image={"/tinash.png"}
-            link={"https:www.jacautopro.co.zw"}
-            company={"TinaSoft NEXUS"}
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <SoftwareCard image={"/tina.png"} link={""} />
-        </SwiperSlide>
-        <SwiperSlide>
-          <SoftwareCard image={"/tinas.png"} link={""} />
-        </SwiperSlide>
-        <SwiperSlide>
-          <SoftwareCard image={"/tinash.png"} link={""} />
         </SwiperSlide>
       </StyledSwiper>
 
@@ -171,7 +171,7 @@ function ImageSliderSoftware() {
   );
 }
 
-function SoftwareCard({ image, link, company }) {
+function SoftwareCard({ image, company }) {
   return (
     <motion.div
       initial={{
@@ -196,7 +196,7 @@ function SoftwareCard({ image, link, company }) {
       />
 
       <Link
-        href={link}
+        href={"/services/software"}
         target="_blank"
         // rel="noopener noreferrer"
         className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 bg-black bg-opacity-50 text-blue-800 text-lg font-semibold transition-opacity duration-300"

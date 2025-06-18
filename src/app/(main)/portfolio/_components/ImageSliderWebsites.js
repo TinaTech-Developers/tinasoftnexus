@@ -84,16 +84,21 @@ function ImageSliderWebsites() {
           />
         </SwiperSlide>
         <SwiperSlide>
-          <WebsitesCard link={""} />
+          <WebsitesCard
+            image={"/trebo.png"}
+            link={"https://www.treboconstruction.co.zw"}
+            company={"Trebo Construction"}
+          />
         </SwiperSlide>
         <SwiperSlide>
-          <WebsitesCard link={""} />
+          <WebsitesCard
+            image={"/pmh.png"}
+            link={"https://www.pmh.co.zw"}
+            company={"Pressletter Media House"}
+          />
         </SwiperSlide>
         <SwiperSlide>
-          <WebsitesCard link={""} />
-        </SwiperSlide>
-        <SwiperSlide>
-          <WebsitesCard link={""} />
+          <WebsitesCard image={"/tinas.png"} link={"/"} />
         </SwiperSlide>
       </StyledSwiper>
 
