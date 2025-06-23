@@ -1,5 +1,6 @@
+/** @type {import('next-sitemap').IConfig} */
 module.exports = {
   siteUrl: "https://www.tinasoftnexus.co.zw",
   generateRobotsTxt: true,
-  outDir: "out",
+  sitemapSize: 5000,
 };

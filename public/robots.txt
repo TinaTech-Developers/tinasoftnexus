@@ -1,4 +1,9 @@
+# *
 User-agent: *
-Disallow:
+Allow: /
 
-Sitemap: https://tinasoftnexus.co.zw/sitemap.xml
+# Host
+Host: https://www.tinasoftnexus.co.zw
+
+# Sitemaps
+Sitemap: https://www.tinasoftnexus.co.zw/sitemap.xml
