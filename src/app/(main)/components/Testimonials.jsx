@@ -48,9 +48,28 @@ function Testimonials() {
       </div>
       <SliderWrapper className="mt-4">
         <Slider {...settings} className="flex items-center justify-center">
-          <Testimonial />
-          <Testimonial />
-          <Testimonial />
+          <Testimonial
+            message={
+              "  TinaSoft Nexus has been supporting us for the past three years and they have transferred so much knowledge to us such that we are able to resolve some of the day-to-day user issues on our own."
+            }
+            name={"Tinashe Phiri"}
+            position={"Software Developer"}
+            company={"TinaSoft NEXUS"}
+          />
+          <Testimonial
+            message={"Great job done on our website Jac auto Pro"}
+            name={"Arnold Kutesera"}
+            position={"Mechanic"}
+            company={"Jac Auto Pro"}
+          />
+          <Testimonial
+            message={
+              "Working with this ICT company has been a great experience. Their team is knowledgeable, responsive, and helped us streamline our IT processes. We highly recommend them"
+            }
+            name={"Lucky Yasini"}
+            position={"Biker"}
+            company={"Lucky Bikerz"}
+          />
           <Testimonial />
           <Testimonial />
         </Slider>

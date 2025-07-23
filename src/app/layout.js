@@ -8,9 +8,14 @@ const oswald = Oswald({ subsets: ["latin"] });
 export const metadata = {
   title: "TinaSoft Nexus | Harare’s Leading ICT Company",
   description:
-    "TinaSoft Nexus is Harare’s trusted ICT company offering expert software development, networking, server setups, CCTV, and tech support across Zimbabwe.",
+    "TinaSoft Nexus is Harare’s trusted ICT company offering expert software development, website development, networking, server setups, CCTV Installation, and tech support across Zimbabwe.",
   keywords: [
     "TinaSoft Nexus",
+    "Website Development Harare",
+    "Software Development Harare",
+    "ICT Services Zimbabwe",
+    "Laptop Repairs Harare",
+    "Computer Repairs Harare",
     "ICT Harare",
     "Software Development Zimbabwe",
     "CCTV installation Harare",

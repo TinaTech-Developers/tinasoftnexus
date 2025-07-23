@@ -52,7 +52,24 @@ function Partners() {
                 className="w-28 h-16 object-contain mx-auto"
               />
             </div>
-
+            <div className="bg-no-repeat flex justify-center items-center h-32 w-auto">
+              <Image
+                src="/trebologo.png"
+                alt=""
+                height={200}
+                width={300}
+                className="w-28 h-16 object-contain mx-auto"
+              />
+            </div>
+            <div className="bg-no-repeat flex justify-center items-center h-32 w-auto">
+              <Image
+                src="/logos.jpg"
+                alt=""
+                height={200}
+                width={300}
+                className="w-28 h-16 object-contain mx-auto"
+              />
+            </div>
             <div className="items-center justify-center">
               <h3 className=" text-center text-4xl font-bold">PRAGRAGO</h3>
             </div>

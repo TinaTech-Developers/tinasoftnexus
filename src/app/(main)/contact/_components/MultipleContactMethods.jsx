@@ -12,14 +12,14 @@ const contactMethods = [
     id: 1,
     icon: <FaPhoneAlt size={24} />,
     title: "Phone",
-    info: "+263 71 247 1209",
+    info: "+263 71 247 1209 | +263 77 305 9753",
     link: "tel:+263712471209",
   },
   {
     id: 2,
     icon: <FaEnvelope size={24} />,
     title: "Email",
-    info: "contact@tinasoftnexus.co.zw",
+    info: "info@tinasoftnexus.co.zw",
     link: "mailto:contact@tinasoftnexus.co.zw",
   },
   {
@@ -60,13 +60,23 @@ export default function MultipleContactMethods() {
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ delay: id * 0.15, duration: 0.5 }}
-            className="flex items-center gap-4 p-5 border rounded-lg shadow-sm hover:shadow-lg hover:bg-cyan-50 transition cursor-pointer"
+            className="flex flex-col items-start gap-2 p-5 border rounded-lg shadow-sm hover:shadow-lg hover:bg-cyan-50 transition cursor-pointer"
           >
-            <div className="text-cyan-700">{icon}</div>
-            <div>
-              <h3 className="font-semibold text-lg text-gray-800">{title}</h3>
-              <p className="text-gray-600">{info}</p>
+            <div className="flex items-center gap-4">
+              <div className="text-cyan-700">{icon}</div>
+              <div>
+                <h3 className="font-semibold text-lg text-gray-800">{title}</h3>
+                <p className="text-gray-600">{info}</p>
+              </div>
             </div>
+
+            {/* Show this message only for Live Chat */}
+            {title === "Live Chat" && (
+              <p className="text-sm text-red-600 mt-2">
+                Live chat is currently unavailable. Please use the contact form
+                instead.
+              </p>
+            )}
           </motion.a>
         ))}
       </div>
