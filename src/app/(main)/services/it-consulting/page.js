@@ -98,7 +98,7 @@ function page() {
         </div>
       </section>
       <FAQ />
-      <Testimonials />
+      {/* <Testimonials /> */}
       <CONSULTINGCALLTOACTION />
     </ServicesLayout>
   );

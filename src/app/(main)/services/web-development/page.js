@@ -44,7 +44,7 @@ function page() {
       {/* FAQs */}
       <FAQ />
       {/* Testimonials */}
-      <Testimonials />
+      {/* <Testimonials /> */}
       {/* Call to Action Section */}
       <WebCallToAction />
     </ServicesLayout>

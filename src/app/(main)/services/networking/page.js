@@ -50,7 +50,7 @@ function Page() {
       />
       <AnimatedNetworkingServices />
       <FAQ />
-      <Testimonials />
+      {/* <Testimonials /> */}
       <NetworkingCallToAction />
     </ServicesLayout>
   );

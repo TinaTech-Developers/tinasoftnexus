@@ -1,15 +1,40 @@
 "use client";
 
 import { useState } from "react";
+import emailjs from "emailjs-com";
 
-export default function HardwareCallToAction() {
+export default function CCTVCallToAction() {
   const [formOpen, setFormOpen] = useState(false);
+  const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission logic (e.g., API call)
-    alert("Request submitted! Our hardware specialists will contact you soon.");
-    setFormOpen(false);
+    setLoading(true);
+
+    const formData = {
+      name: e.target.name.value,
+      email: e.target.email.value,
+      phone: e.target.phone.value,
+      details: e.target.details.value || "No additional info provided",
+      type: "CCTV Site Survey Request",
+    };
+
+    try {
+      await emailjs.send(
+        "service_360amfd", // ✔️ your EmailJS Service ID
+        "template_jp91x36", // ✔️ your Template ID
+        formData,
+        "xlsV0b9q84sM-rKdh" // ✔️ your EmailJS Public Key
+      );
+
+      alert("Request submitted successfully! We will contact you soon.");
+      setFormOpen(false);
+    } catch (error) {
+      console.error("EmailJS Error:", error);
+      alert("Failed to send request. Please try again.");
+    }
+
+    setLoading(false);
   };
 
   return (
@@ -18,23 +43,22 @@ export default function HardwareCallToAction() {
       <section className="relative bg-gradient-to-br from-blue-50 via-cyan-100 to-white py-20 px-4 md:px-8 overflow-hidden">
         <div className="max-w-4xl mx-auto text-center relative z-10">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Need Reliable Hardware Maintenance or New Equipment?
+            Protect What Matters Most.
           </h2>
           <p className="text-md md:text-lg text-gray-700 mb-8">
-            Let TinaSoft Nexus keep your devices running smoothly with expert
-            hardware repair, maintenance, and sales services tailored to your
-            needs.
+            Secure your home or business with expert CCTV installation from
+            TinaSoft Nexus. Our surveillance solutions offer 24/7 protection,
+            remote monitoring, and peace of mind.
           </p>
           <button
             onClick={() => setFormOpen(true)}
             className="relative inline-block text-sm md:text-lg font-medium border border-blue-900 text-blue-900 px-6 py-3 overflow-hidden group z-10 transition-all duration-300 rounded-md hover:text-white"
           >
             <span className="absolute inset-0 w-full h-full bg-blue-900 scale-x-0 origin-left group-hover:scale-x-100 transition-transform duration-300 ease-out z-0"></span>
-            <span className="relative z-10">Request a Site Survey</span>
+            <span className="relative z-10">Book a Free Site Survey</span>
           </button>
         </div>
 
-        {/* Decorative Background Elements */}
         <div className="absolute top-0 left-0 w-40 h-40 bg-cyan-100 rounded-full opacity-30 blur-3xl -z-10 animate-pulse"></div>
         <div className="absolute bottom-0 right-0 w-60 h-60 bg-blue-200 rounded-full opacity-20 blur-2xl -z-10 animate-pulse"></div>
       </section>
@@ -66,6 +90,7 @@ export default function HardwareCallToAction() {
                   className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
               </div>
+
               <div>
                 <label className="block text-gray-700 mb-1" htmlFor="email">
                   Email Address
@@ -78,6 +103,7 @@ export default function HardwareCallToAction() {
                   className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
               </div>
+
               <div>
                 <label className="block text-gray-700 mb-1" htmlFor="phone">
                   Phone Number
@@ -90,6 +116,7 @@ export default function HardwareCallToAction() {
                   className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
               </div>
+
               <div>
                 <label className="block text-gray-700 mb-1" htmlFor="details">
                   Additional Details
@@ -99,14 +126,16 @@ export default function HardwareCallToAction() {
                   name="details"
                   rows="3"
                   className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  placeholder="Tell us more about your hardware needs (optional)"
+                  placeholder="Tell us more about your site or needs (optional)"
                 ></textarea>
               </div>
+
               <button
                 type="submit"
+                disabled={loading}
                 className="w-full bg-blue-900 text-white py-3 rounded-md font-semibold hover:bg-blue-700 transition"
               >
-                Submit Request
+                {loading ? "Submitting..." : "Submit Request"}
               </button>
             </form>
           </div>

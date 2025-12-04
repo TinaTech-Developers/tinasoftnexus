@@ -158,7 +158,7 @@ function page() {
       </section>
 
       <CloudFAQ />
-      <Testimonials />
+      {/* <Testimonials /> */}
       <CloudComputingCallToAction />
     </ServicesLayout>
   );

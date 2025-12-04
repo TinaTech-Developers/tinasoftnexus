@@ -24,6 +24,7 @@ function Navbar() {
         { name: "Cloud Computing", link: "/services/cloud-computing" },
       ],
     },
+    { name: "Blog", link: "/blog" },
     { name: "About", link: "/about" },
     { name: "Contact", link: "/contact" },
   ];

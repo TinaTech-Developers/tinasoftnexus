@@ -11,6 +11,7 @@ import Image from "next/image";
 import SimpleServices from "./SimpleServices";
 import HeroOne from "./HeroOne";
 import HeroTwo from "./HeroTwo";
+import HeroIntro from "./HeroIntro";
 
 export default function HeroSlider() {
   const progressCircle = useRef(null);
@@ -27,6 +28,17 @@ export default function HeroSlider() {
         modules={[Autoplay, Pagination, Navigation]}
         className=""
       >
+        <SwiperSlide>
+          <HeroIntro />
+          <SimpleServices
+            image={"/coding.jpg"}
+            title={"Welcome to TinaSoft Nexus"}
+            subtitle={"Simplifying IT, Amplifying Business."}
+            description={
+              "At TinaSoft Nexus, we provide expert solutions in web development, mobile app development, cloud computing, cybersecurity, hardware maintenance, and networking. Our services are delivered with personalized support and cutting-edge technology, helping businesses streamline operations, boost productivity, and thrive in the digital age."
+            }
+          />
+        </SwiperSlide>
         <SwiperSlide>
           <Hero />
           <SimpleServices

@@ -1,15 +1,39 @@
-"use client"
+"use client";
 
 import { useState } from "react";
+import emailjs from "emailjs-com";
 
 export default function CONSULTINGCALLTOACTION() {
   const [formOpen, setFormOpen] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Here you can handle form submission logic (e.g., API call)
-    alert("Request submitted! We will contact you soon.");
-    setFormOpen(false);
+    setLoading(true);
+
+    const formData = {
+      name: e.target.name.value,
+      email: e.target.email.value,
+      phone: e.target.phone.value,
+      details: e.target.details.value || "No additional details",
+      subject: "IT Consulting Request",
+    };
+
+    emailjs
+      .send(
+        "service_360amfd", // ✔️ your EmailJS Service ID
+        "template_jp91x36", // ✔️ your Template ID
+        formData,
+        "xlsV0b9q84sM-rKdh" // ✔️ your EmailJS Public Key
+      )
+      .then(() => {
+        alert("Your consulting request has been submitted successfully!");
+        setFormOpen(false);
+      })
+      .catch(() => {
+        alert("Failed to submit request. Please try again.");
+      })
+      .finally(() => setLoading(false));
   };
 
   return (
@@ -49,9 +73,11 @@ export default function CONSULTINGCALLTOACTION() {
             >
               &times;
             </button>
+
             <h3 className="text-xl font-semibold mb-4">
-              Book a Free Site Survey
+              Request IT Consulting Services
             </h3>
+
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
                 <label className="block text-gray-700 mb-1" htmlFor="name">
@@ -62,9 +88,11 @@ export default function CONSULTINGCALLTOACTION() {
                   name="name"
                   type="text"
                   required
-                  className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full border border-gray-300 rounded-md px-3 py-2
+                  focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
               </div>
+
               <div>
                 <label className="block text-gray-700 mb-1" htmlFor="email">
                   Email Address
@@ -74,9 +102,11 @@ export default function CONSULTINGCALLTOACTION() {
                   name="email"
                   type="email"
                   required
-                  className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full border border-gray-300 rounded-md px-3 py-2
+                  focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
               </div>
+
               <div>
                 <label className="block text-gray-700 mb-1" htmlFor="phone">
                   Phone Number
@@ -86,9 +116,11 @@ export default function CONSULTINGCALLTOACTION() {
                   name="phone"
                   type="tel"
                   required
-                  className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full border border-gray-300 rounded-md px-3 py-2
+                  focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
               </div>
+
               <div>
                 <label className="block text-gray-700 mb-1" htmlFor="details">
                   Additional Details
@@ -97,15 +129,19 @@ export default function CONSULTINGCALLTOACTION() {
                   id="details"
                   name="details"
                   rows="3"
-                  className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  placeholder="Tell us more about your site or needs (optional)"
+                  className="w-full border border-gray-300 rounded-md px-3 py-2
+                  focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  placeholder="Tell us more about your consulting needs (optional)"
                 ></textarea>
               </div>
+
               <button
                 type="submit"
-                className="w-full bg-blue-900 text-white py-3 rounded-md font-semibold hover:bg-blue-700 transition"
+                disabled={loading}
+                className="w-full bg-blue-900 text-white py-3 rounded-md font-semibold
+                hover:bg-blue-700 transition disabled:opacity-50"
               >
-                Submit Request
+                {loading ? "Sending..." : "Submit Request"}
               </button>
             </form>
           </div>

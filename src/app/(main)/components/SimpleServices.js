@@ -49,7 +49,7 @@ function SimpleServices({ image, title, subtitle, description }) {
           >
             OUR SERVICES
           </button> */}
-        <Button name={"OUR SERVICES"} link={"/services"} />
+        <Button name={"OUR SERVICES"} link={"/services/web-development"} />
       </div>
     </div>
   );

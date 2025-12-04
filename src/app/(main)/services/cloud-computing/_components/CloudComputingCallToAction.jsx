@@ -1,14 +1,38 @@
 "use client";
 
 import { useState } from "react";
+import emailjs from "emailjs-com";
 
 export default function CloudComputingCallToAction() {
   const [formOpen, setFormOpen] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert("Request submitted! We will contact you soon.");
-    setFormOpen(false);
+
+    const formData = {
+      name: e.target.name.value,
+      email: e.target.email.value,
+      phone: e.target.phone.value,
+      details: e.target.details.value,
+    };
+
+    emailjs
+      .send(
+        "service_360amfd", // ✔️ your EmailJS Service ID
+        "template_jp91x36", // ✔️ your Template ID
+        formData,
+        "xlsV0b9q84sM-rKdh" // ✔️ your EmailJS Public Key
+      )
+      .then(
+        () => {
+          alert("Request submitted! We will contact you soon.");
+          setFormOpen(false);
+        },
+        (error) => {
+          console.error("EmailJS Error:", error);
+          alert("Failed to send request. Please try again.");
+        }
+      );
   };
 
   return (
@@ -34,10 +58,6 @@ export default function CloudComputingCallToAction() {
             </span>
           </button>
         </div>
-
-        {/* Decorative Background Elements */}
-        <div className="absolute top-0 left-0 w-40 h-40 bg-blue-100 rounded-full opacity-30 blur-3xl -z-10 animate-pulse"></div>
-        <div className="absolute bottom-0 right-0 w-60 h-60 bg-sky-200 rounded-full opacity-20 blur-2xl -z-10 animate-pulse"></div>
       </section>
 
       {/* Modal Form */}
@@ -47,62 +67,59 @@ export default function CloudComputingCallToAction() {
             <button
               onClick={() => setFormOpen(false)}
               className="absolute top-3 right-3 text-gray-500 hover:text-gray-700 text-2xl font-bold"
-              aria-label="Close form"
             >
               &times;
             </button>
+
             <h3 className="text-xl font-semibold mb-4">
               Schedule a Free Cloud Consultation
             </h3>
+
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
-                <label className="block text-gray-700 mb-1" htmlFor="name">
-                  Full Name
-                </label>
+                <label className="block text-gray-700 mb-1">Full Name</label>
                 <input
-                  id="name"
                   name="name"
                   type="text"
                   required
-                  className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full border border-gray-300 rounded-md px-3 py-2"
                 />
               </div>
+
               <div>
-                <label className="block text-gray-700 mb-1" htmlFor="email">
+                <label className="block text-gray-700 mb-1">
                   Email Address
                 </label>
                 <input
-                  id="email"
                   name="email"
                   type="email"
                   required
-                  className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full border border-gray-300 rounded-md px-3 py-2"
                 />
               </div>
+
               <div>
-                <label className="block text-gray-700 mb-1" htmlFor="phone">
-                  Phone Number
-                </label>
+                <label className="block text-gray-700 mb-1">Phone Number</label>
                 <input
-                  id="phone"
                   name="phone"
                   type="tel"
                   required
-                  className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full border border-gray-300 rounded-md px-3 py-2"
                 />
               </div>
+
               <div>
-                <label className="block text-gray-700 mb-1" htmlFor="details">
+                <label className="block text-gray-700 mb-1">
                   Project Details
                 </label>
                 <textarea
-                  id="details"
                   name="details"
                   rows="3"
-                  className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  placeholder="Tell us about your cloud goals or current infrastructure (optional)"
+                  className="w-full border border-gray-300 rounded-md px-3 py-2"
+                  placeholder="Tell us about your cloud goals (optional)"
                 ></textarea>
               </div>
+
               <button
                 type="submit"
                 className="w-full bg-blue-900 text-white py-3 rounded-md font-semibold hover:bg-blue-700 transition"

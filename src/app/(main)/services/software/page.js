@@ -51,7 +51,7 @@ function Page() {
       />
       <AnimatedSoftwareServices /> {/* ← now holds all framer-motion logic */}
       <FAQ />
-      <Testimonials />
+      {/* <Testimonials /> */}
       <SoftwareCallToAction />
     </ServicesLayout>
   );

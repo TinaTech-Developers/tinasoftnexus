@@ -157,7 +157,7 @@ function page() {
         </div>
       </section>
       <HardwareFAQ />
-      <Testimonials />
+      {/* <Testimonials /> */}
       <HardwareCallToAction />
     </ServicesLayout>
   );
