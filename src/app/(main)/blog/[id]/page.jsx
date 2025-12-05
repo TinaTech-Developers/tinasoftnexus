@@ -2,7 +2,7 @@ import Image from "next/image";
 import ServicesLayout from "../../services/_components/ServicesLayout";
 import BlogHero from "../_components/BlogHero";
 import { marked } from "marked";
-import { ArrowBigLeft } from "lucide-react";
+import { ArrowBigLeft, MessageSquare } from "lucide-react";
 import Link from "next/link";
 
 // Blog posts data
@@ -117,12 +117,20 @@ export default function BlogDetails({ params }) {
           dangerouslySetInnerHTML={{ __html: marked.parse(post.content) }}
         />
       </div>
-      <Link
-        href="/blog"
-        className="flex items-center gap-2 text-blue-950 hover:text-blue-600 max-w-4xl mx-auto p-6"
-      >
-        <ArrowBigLeft /> Back to Blog
-      </Link>{" "}
+      <div className="w-full flex flex-row items-center justify-between md:py-6">
+        <Link
+          href="/blog"
+          className="flex items-center gap-2 text-blue-950 hover:text-blue-600 max-w-4xl mx-auto p-6"
+        >
+          <ArrowBigLeft /> Back to Blog
+        </Link>{" "}
+        <Link
+          href="/contact"
+          className="flex items-center justify-center gap-2 text-blue-950 hover:text-blue-600 max-w-4xl mx-auto p-6"
+        >
+          <MessageSquare /> Speak to Sales
+        </Link>{" "}
+      </div>
     </ServicesLayout>
   );
 }
