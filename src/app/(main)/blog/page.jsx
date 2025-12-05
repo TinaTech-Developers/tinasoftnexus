@@ -11,15 +11,18 @@ import BlogHero from "./_components/BlogHero";
 
 const posts = [
   {
+    id: 1,
     title: "Why Your Business Needs a Modern Website in 2025",
     summary:
       "A professional website increases trust, visibility, and customer engagement. Here’s why it matters.",
-    image: "/blog1.jpg",
+    image:
+      "https://blog.zegocloud.com/wp-content/uploads/2024/03/types-of-web-development-services.jpg",
     slug: "why-your-business-needs-a-modern-website",
     category: "Web Development",
     date: "2025-01-05",
   },
   {
+    id: 2,
     title: "Choosing Between Custom Software vs Off-the-Shelf",
     summary:
       "Understand which software option is best for your business and why custom systems give you an edge.",
@@ -29,10 +32,11 @@ const posts = [
     date: "2024-12-22",
   },
   {
+    id: 3,
     title: "How SEO Can Transform Your Business Visibility",
     summary:
       "Learn how search engine optimization boosts traffic, sales, and brand positioning.",
-    image: "/blog3.jpg",
+    image: "https://algorizon.com/wp-content/uploads/2024/09/seo.jpg",
     slug: "how-seo-transforms-business",
     category: "SEO & Marketing",
     date: "2024-11-10",
@@ -83,6 +87,17 @@ export default function BlogPage() {
             whileHover={{ y: -4 }}
             className="border-b border-gray-700 pb-8 group"
           >
+            {/* Image on top */}
+            <div className="w-full h-48 mb-4 rounded-lg overflow-hidden">
+              <Image
+                src={post.image}
+                alt={post.title}
+                width={500}
+                height={300}
+                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+              />
+            </div>
+
             <p className="text-sm text-gray-600 mb-2">
               {post.category.toUpperCase()}
             </p>
@@ -96,7 +111,7 @@ export default function BlogPage() {
             </p>
 
             <Link
-              href={`/blog/${post.slug}`}
+              href={`/blog/${post.id}`}
               className="mt-4 inline-flex items-center gap-1 font-semibold text-blue-700 hover:text-blue-950"
             >
               Read More <ChevronRight size={18} />

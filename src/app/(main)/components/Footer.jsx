@@ -128,7 +128,7 @@ function Footer() {
       </div>
       <div className="bg-blue-400 h-16 flex items-center justify-center">
         <p className="text-sm">
-          Copyright © 2025 TinaSoft Nexus. All Rights Reserved
+          &copy; {new Date().getFullYear()} TinaSoft Nexus. All Rights Reserved
         </p>
       </div>
     </div>
