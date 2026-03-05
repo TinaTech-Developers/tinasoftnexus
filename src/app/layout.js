@@ -2,6 +2,7 @@ import React from "react";
 import "./globals.css";
 import { Oswald } from "next/font/google";
 import ContactButtons from "./(main)/components/ContactButtons";
+import Providers from "./(shop)/providers";
 
 const oswald = Oswald({ subsets: ["latin"] });
 
@@ -102,9 +103,11 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body className={oswald.className}>
-        {children}
+        <Providers>
+          {children}
 
-        <ContactButtons />
+          <ContactButtons />
+        </Providers>
       </body>
     </html>
   );
