@@ -48,7 +48,7 @@ export default function ShopLayout({ children }) {
               </span>
             </Link>
 
-            {/* Navigation */}
+            {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center gap-8 text-sm font-medium">
               <Link
                 href="/solutions"
@@ -66,41 +66,39 @@ export default function ShopLayout({ children }) {
                 Contact Us
               </Link>
 
-              {/* Shop Button */}
               <Link
                 href="/shop"
                 className="bg-[#00B3C6] text-white px-4 py-2 rounded-lg hover:bg-[#0099aa] transition"
               >
                 Shop Now
               </Link>
-
-              {/* Cart Icon */}
-              <Link href="/cart" className="relative">
-                <ShoppingCart className="w-5 h-5 text-[#0B1E3F]" />
-
-                <AnimatePresence>
-                  {cartCount > 0 && (
-                    <motion.span
-                      key={cartCount}
-                      initial={{ scale: 0 }}
-                      animate={{ scale: 1 }}
-                      exit={{ scale: 0 }}
-                      transition={{
-                        type: "spring",
-                        stiffness: 400,
-                        damping: 15,
-                      }}
-                      className="absolute -top-2 -right-2 bg-[#00B3C6] text-white text-xs w-5 h-5 flex items-center justify-center rounded-full"
-                    >
-                      {cartCount}
-                    </motion.span>
-                  )}
-                </AnimatePresence>
-              </Link>
             </nav>
+
+            {/* Cart Icon (Always Visible) */}
+            <Link href="/cart" className="relative">
+              <ShoppingCart className="w-6 h-6 text-[#0B1E3F]" />
+
+              <AnimatePresence>
+                {cartCount > 0 && (
+                  <motion.span
+                    key={cartCount}
+                    initial={{ scale: 0 }}
+                    animate={{ scale: 1 }}
+                    exit={{ scale: 0 }}
+                    transition={{
+                      type: "spring",
+                      stiffness: 400,
+                      damping: 15,
+                    }}
+                    className="absolute -top-2 -right-2 bg-[#00B3C6] text-white text-xs w-5 h-5 flex items-center justify-center rounded-full"
+                  >
+                    {cartCount}
+                  </motion.span>
+                )}
+              </AnimatePresence>
+            </Link>
           </div>
         </header>
-
         {/* ================= PAGE CONTENT ================= */}
         <main className="flex-1">
           <motion.div
