@@ -52,3 +52,35 @@ export async function DELETE(req) {
 
   return NextResponse.json({ success: true });
 }
+
+export async function PATCH(req) {
+  await connectDB();
+
+  const body = await req.json();
+  const { sessionId, productId, type } = body;
+
+  const cart = await Cart.findOne({ sessionId });
+  if (!cart) {
+    return NextResponse.json({ error: "Cart not found" }, { status: 404 });
+  }
+
+  const item = cart.items.find(
+    (item) => item.productId.toString() === productId,
+  );
+  if (!item) {
+    return NextResponse.json(
+      { error: "Item not found in cart" },
+      { status: 404 },
+    );
+  }
+
+  if (type === "increase") {
+    item.quantity += 1;
+  } else if (type === "decrease") {
+    item.quantity = Math.max(item.quantity - 1, 1);
+  }
+
+  await cart.save();
+
+  return NextResponse.json(cart);
+}

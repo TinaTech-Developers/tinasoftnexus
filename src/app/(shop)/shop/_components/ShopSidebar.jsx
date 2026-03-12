@@ -1,56 +1,90 @@
 "use client";
 
-export default function ShopSidebar() {
+export default function ShopSidebar({
+  search,
+  setSearch,
+  category,
+  setCategory,
+  price,
+  setPrice,
+}) {
+  const categories = [
+    "Laptops",
+    "Accessories",
+    "Batteries",
+    "Laptop LCDs",
+    "Laptop Keyboards",
+    "Laptop Chargers",
+    "Cameras",
+    "Audio",
+    "Tablets",
+    "Smartphones",
+    "Printers",
+    "Desktops",
+    "Workstations",
+    "Monitors",
+    "Networking",
+    "Storage",
+    "Software",
+    "Peripherals",
+    "Gaming",
+    "Components",
+    "Refurbished",
+  ];
+
+  const toggleCategory = (cat) => {
+    if (category.includes(cat)) {
+      setCategory(category.filter((c) => c !== cat));
+    } else {
+      setCategory([...category, cat]);
+    }
+  };
+
   return (
     <div className="space-y-8">
       {/* Search */}
       <div>
         <h3 className="font-semibold mb-3">Product Search</h3>
         <input
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
           type="text"
           placeholder="Search products..."
           className="w-full border rounded-lg px-3 py-2"
         />
       </div>
 
-      {/* Price Filter */}
+      {/* Price */}
       <div>
         <h3 className="font-semibold mb-3">Price Filter</h3>
-        <input type="range" className="w-full" />
-        <p className="text-sm mt-2">$0 - $3000</p>
+
+        <input
+          type="range"
+          min="0"
+          max="3000"
+          value={price}
+          onChange={(e) => setPrice(e.target.value)}
+          className="w-full"
+        />
+
+        <p className="text-sm mt-2">$0 - ${price}</p>
       </div>
 
-      {/* Category */}
+      {/* Categories */}
       <div>
         <h3 className="font-semibold mb-3">Category</h3>
 
         <div className="space-y-2">
-          <label className="flex items-center gap-2">
-            <input type="checkbox" />
-            Laptops
-          </label>
-
-          <label className="flex items-center gap-2">
-            <input type="checkbox" />
-            Accessories
-          </label>
-
-          <label className="flex items-center gap-2">
-            <input type="checkbox" />
-            Batteries
-          </label>
-          <label className="flex items-center gap-2">
-            <input type="checkbox" />
-            Printers
-          </label>
-          <label className="flex items-center gap-2">
-            <input type="checkbox" />
-            Desktops
-          </label>
-          <label className="flex items-center gap-2">
-            <input type="checkbox" />
-            Workstations
-          </label>
+          {categories.map((cat) => (
+            <label key={cat} className="flex items-center gap-2">
+              <input
+                type="checkbox"
+                checked={category.includes(cat)}
+                onChange={() => toggleCategory(cat)}
+              />
+              {cat}
+            </label>
+          ))}
         </div>
       </div>
     </div>

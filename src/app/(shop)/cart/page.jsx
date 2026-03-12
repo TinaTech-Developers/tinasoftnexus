@@ -55,6 +55,27 @@ export default function CartPage() {
       setRemovingItem(null);
     }
   };
+  const updateQuantity = async (productId, type) => {
+    const sessionId = localStorage.getItem("cart_session");
+    if (!sessionId) return;
+
+    try {
+      const res = await fetch("/api/cart", {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          sessionId,
+          productId,
+          type, // "increase" | "decrease"
+        }),
+      });
+
+      const updatedCart = await res.json();
+      setCart(updatedCart);
+    } catch (err) {
+      console.error("Failed to update quantity", err);
+    }
+  };
 
   return (
     <ShopLayout
@@ -106,9 +127,29 @@ export default function CartPage() {
                         <p className="text-sm text-gray-500 mt-1">
                           {item.currency} {item.price}
                         </p>
-                        <p className="text-sm mt-2 text-gray-600">
-                          Quantity: {item.quantity}
-                        </p>
+                        <div className="flex items-center gap-3 mt-2">
+                          <button
+                            onClick={() =>
+                              updateQuantity(item.productId, "decrease")
+                            }
+                            className="w-7 h-7 flex items-center justify-center border rounded hover:bg-gray-100"
+                          >
+                            -
+                          </button>
+
+                          <span className="text-sm font-medium w-5 text-center">
+                            {item.quantity}
+                          </span>
+
+                          <button
+                            onClick={() =>
+                              updateQuantity(item.productId, "increase")
+                            }
+                            className="w-7 h-7 flex items-center justify-center border rounded hover:bg-gray-100"
+                          >
+                            +
+                          </button>
+                        </div>
                       </div>
 
                       <button

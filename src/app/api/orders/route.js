@@ -1,19 +1,17 @@
-// src/app/api/orders/route.js
 import Cart from "../../../../models/Cart";
 import Order from "../../../../models/Order";
-import { v4 as uuidv4 } from "uuid";
-import { Paynow } from "paynow"; // Named import
-import connectDB from "../../../../lib/mongodb"; // your mongoose connection
+import connectDB from "../../../../lib/mongodb";
+import { Paynow } from "paynow";
 
 export async function POST(req) {
   try {
     await connectDB();
 
-    const { sessionId, customer } = await req.json();
+    const { sessionId, customer, paymentMethod } = await req.json();
 
     if (!customer?.email) {
       return new Response(
-        JSON.stringify({ error: "Customer email is required" }),
+        JSON.stringify({ error: "Customer email required" }),
         { status: 400 },
       );
     }
@@ -31,43 +29,43 @@ export async function POST(req) {
       0,
     );
 
-    // Save order in MongoDB
+    // Save order
     const order = await Order.create({
       orderId,
       customer,
       items: cart.items,
       total: subtotal,
-      status: "Pending",
+      status: paymentMethod === "online" ? "Pending Payment" : "Pending",
+      paymentMethod,
     });
 
-    // PAYNOW CONFIG
-    const paynow = new Paynow(
-      process.env.PAYNOW_INTEGRATION_ID,
-      process.env.PAYNOW_INTEGRATION_KEY,
-      "http://localhost:3000/payment/success", // success URL
-      "http://localhost:3000/payment/cancel", // cancel URL
-    );
+    if (paymentMethod === "online") {
+      const paynow = new Paynow(
+        process.env.PAYNOW_INTEGRATION_ID,
+        process.env.PAYNOW_INTEGRATION_KEY,
+        "http://localhost:3000/payment/success",
+        "http://localhost:3000/payment/cancel",
+      );
 
-    const payment = paynow.createPayment(orderId, customer.email);
+      const payment = paynow.createPayment(orderId, customer.email);
+      cart.items.forEach((item) => {
+        payment.add(item.name, item.price * item.quantity);
+      });
 
-    // Add each cart item to PayNow payment
-    cart.items.forEach((item) => {
-      payment.add(item.name, item.price * item.quantity);
-    });
+      const response = await paynow.send(payment);
+      console.log("PayNow response:", response);
 
-    const response = await paynow.send(payment);
-
-    if (response.success) {
       return new Response(
-        JSON.stringify({ orderId, payNowUrl: response.redirectUrl }),
+        JSON.stringify({
+          orderId,
+          payNowUrl: response.success ? response.redirectUrl : null,
+        }),
         { status: 201 },
       );
-    } else {
-      return new Response(
-        JSON.stringify({ error: "Failed to initiate PayNow payment" }),
-        { status: 500 },
-      );
     }
+
+    // COD
+    return new Response(JSON.stringify({ orderId }), { status: 201 });
   } catch (err) {
     console.error("Order creation error:", err);
     return new Response(JSON.stringify({ error: "Order creation failed" }), {

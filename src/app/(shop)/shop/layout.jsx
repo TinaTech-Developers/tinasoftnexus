@@ -50,10 +50,7 @@ export default function ShopLayout({ children }) {
 
             {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center gap-8 text-sm font-medium">
-              <Link
-                href="/solutions"
-                className="hover:text-[#00B3C6] transition"
-              >
+              <Link href="/shop" className="hover:text-[#00B3C6] transition">
                 ICT Solutions
               </Link>
               <Link href="/about" className="hover:text-[#00B3C6] transition">
@@ -146,7 +143,10 @@ export default function ShopLayout({ children }) {
             <div>
               <h4 className="text-white font-semibold mb-4">Contact</h4>
               <p className="text-sm">info@tinasoftnexus.co.zw</p>
-              <p className="text-sm mt-2">+263 XX XXX XXXX</p>
+              <p className="text-sm">sales@tinasoftnexus.co.zw</p>
+              <p className="text-sm mt-2">
+                +263 71 247 1209 | +263 77 305 9753
+              </p>
             </div>
           </div>
 
