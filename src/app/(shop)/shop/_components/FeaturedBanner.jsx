@@ -38,7 +38,7 @@ export default function FeaturedBanner() {
 
   return (
     <section className="py-16 bg-gray-50">
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="w-80 md:max-w-6xl mx-auto px-4 md:px-6">
         <div className="relative bg-gradient-to-r from-[#E6F7FA] to-[#D9ECF2] rounded-3xl p-10 flex flex-col md:flex-row items-center justify-between overflow-hidden">
           <AnimatePresence mode="wait">
             <motion.div

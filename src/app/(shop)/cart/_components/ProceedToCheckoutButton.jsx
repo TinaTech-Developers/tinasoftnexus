@@ -9,12 +9,12 @@ export default function ProceedToCheckoutButton() {
 
   const handleCheckout = () => {
     if (!session) {
-      // login first
-      signIn(undefined, { callbackUrl: "/checkout" });
+      signIn(undefined, {
+        callbackUrl: `${window.location.origin}/checkout`,
+      });
       return;
     }
 
-    // go to checkout page
     router.push("/checkout");
   };
 
