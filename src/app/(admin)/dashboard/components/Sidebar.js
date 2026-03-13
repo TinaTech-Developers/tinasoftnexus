@@ -7,6 +7,8 @@ import {
   MessageSquare,
   BarChart2,
   Settings,
+  Package2,
+  ShoppingBag,
 } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
@@ -15,7 +17,9 @@ const navItems = [
   { icon: Home, label: "Dashboard", href: "/dashboard" },
   { icon: Users, label: "Leads", href: "/dashboard/leads" },
   { icon: Folder, label: "Projects", href: "/dashboard/projects" },
+  { icon: Package2, label: "Products", href: "/dashboard/products" },
   { icon: Package, label: "Orders", href: "/dashboard/orders" },
+  { icon: ShoppingBag, label: "Shop Orders", href: "/dashboard/shop-orders" },
   { icon: MessageSquare, label: "Tickets", href: "/dashboard/tickets" },
   { icon: BarChart2, label: "Analytics", href: "/dashboard/analytics" },
   { icon: Settings, label: "Settings", href: "/dashboard/settings" },

@@ -15,7 +15,7 @@ export default function SlideItem({ product }) {
       <div className="max-w-md">
         <h2 className="text-3xl font-bold text-[#0B1E3F]">{product.title}</h2>
 
-        <p className="mt-4 text-gray-600">{product.description}</p>
+        <p className="mt-4 text-gray-600 font-thin">{product.description}</p>
 
         <button className="mt-6 px-6 py-3 bg-[#00B3C6] text-white rounded-xl shadow hover:bg-[#0099aa] transition">
           Shop Now

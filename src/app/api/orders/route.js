@@ -73,3 +73,16 @@ export async function POST(req) {
     });
   }
 }
+
+export async function GET() {
+  try {
+    await connectDB();
+    const orders = await Order.find().sort({ createdAt: -1 });
+    return new Response(JSON.stringify(orders), { status: 200 });
+  } catch (err) {
+    console.error("Fetch orders error:", err);
+    return new Response(JSON.stringify({ error: "Failed to fetch orders" }), {
+      status: 500,
+    });
+  }
+}

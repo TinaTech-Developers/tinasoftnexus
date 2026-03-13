@@ -30,7 +30,7 @@ export default function CategoryGrid() {
               <div className="p-4 rounded-xl bg-blue-50 group-hover:bg-blue-100 transition">
                 <Icon className="w-8 h-8 text-[#00B3C6]" />
               </div>
-              <span className="font-medium text-gray-700 group-hover:text-[#0B1E3F]">
+              <span className="font-thin text-gray-700 group-hover:text-[#0B1E3F] ">
                 {cat.name}
               </span>
             </div>

@@ -32,7 +32,7 @@ export default function ProductCard({ product }: { product: Product }) {
           {product.name}
         </h3>
 
-        <p className="text-sm text-gray-500">
+        <p className="text-sm text-gray-500 font-thin">
           {product.brand} • {product.category}
         </p>
 

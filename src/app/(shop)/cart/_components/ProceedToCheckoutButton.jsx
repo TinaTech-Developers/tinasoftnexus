@@ -4,13 +4,14 @@ import { useSession, signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 
 export default function ProceedToCheckoutButton() {
-  const { data: session } = useSession();
+  const { status } = useSession();
   const router = useRouter();
 
   const handleCheckout = () => {
-    if (!session) {
+    if (status === "unauthenticated") {
       signIn(undefined, {
-        callbackUrl: `${window.location.origin}/checkout`,
+        callbackUrl: "/checkout",
+        redirect: true,
       });
       return;
     }

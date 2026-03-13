@@ -76,7 +76,10 @@ export default function ShopSidebar({
 
         <div className="grid grid-cols-2 md:grid-cols-1 gap-2">
           {categories.map((cat) => (
-            <label key={cat} className="flex items-center gap-2">
+            <label
+              key={cat}
+              className="flex font-thin text-sm items-center gap-2"
+            >
               <input
                 type="checkbox"
                 checked={category.includes(cat)}

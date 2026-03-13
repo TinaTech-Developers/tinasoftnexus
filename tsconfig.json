@@ -27,7 +27,7 @@
     ".next/types/**/*.ts",
     "**/*.ts",
     "**/*.tsx"
-, "models/Cart.js"  ],
+, "models/Cart.js", "src/app/(admin)/dashboard/quotations/create/page.jsx"  ],
   "exclude": [
     "node_modules"
   ]

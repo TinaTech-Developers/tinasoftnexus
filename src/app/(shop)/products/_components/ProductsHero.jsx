@@ -14,7 +14,7 @@ export default function ProductHero() {
         className=" md:translate-x-56  z-10 max-w-6xl px-6 text-white"
       >
         <h1 className="text-xl md:text-3xl font-bold">TinaSoft Nexus Shop</h1>
-        <p className="mt-3 text-lg text-gray-200">
+        <p className="mt-3 text-lg text-gray-200 font-thin">
           Smart Devices. Reliable Tech. Innovative Solutions.
         </p>
       </motion.div>

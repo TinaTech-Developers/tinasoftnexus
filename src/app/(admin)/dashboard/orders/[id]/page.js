@@ -7,21 +7,7 @@ import { motion } from "framer-motion";
 export default function ViewOrderPage() {
   const { id } = useParams();
   const router = useRouter();
-
-  // Dummy data for now
-  const order = {
-    id: id,
-    service: "Hardware Repair",
-    customer: "John Doe",
-    email: "john.doe@example.com",
-    phone: "0771234567",
-    status: "Pending",
-    date: "2025-10-13",
-    details:
-      "Laptop not powering on. Needs urgent repair.\nAdditional note: customer prefers after 2 PM.",
-    assignedTo: "Technician: Mike Thompson",
-    priority: "High",
-  };
+  const [order, setOrder] = useState();
 
   // Color coding for status
   const statusColors = {

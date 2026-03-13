@@ -1,5 +1,6 @@
 "use client";
-import { useState, useMemo } from "react";
+
+import { useState, useEffect, useMemo } from "react";
 
 import OrdersFilter from "./components/OrdersFilter";
 import OrdersTable from "./components/OrdersTable";
@@ -10,48 +11,11 @@ import BulkOrderActions from "./components/BulkOrderActions";
 import OrdersCharts from "./components/OrdersCharts";
 import OrderKpiCard from "./components/OrderKpiCard";
 
-const services = [
-  "Web Development",
-  "Software Development",
-  "Networking",
-  "CCTV Installation",
-  "IT Consulting",
-  "Hardware Repair",
-  "Cloud Computing",
-];
-
-const initialOrders = [
-  {
-    id: 1,
-    service: "Web Development",
-    customer: "John Doe",
-    email: "john@example.com",
-    phone: "0771234567",
-    status: "Pending",
-    date: "2025-10-13",
-  },
-  {
-    id: 2,
-    service: "Hardware Repair",
-    customer: "Jane Smith",
-    email: "jane@example.com",
-    phone: "0779876543",
-    status: "Completed",
-    date: "2025-10-10",
-  },
-  {
-    id: 3,
-    service: "Web Dev",
-    customer: "Alice",
-    email: "a@x.com",
-    status: "Pending",
-    date: "2025-10-13",
-    isNew: true,
-  },
-];
-
 export default function OrdersPage() {
-  const [orders, setOrders] = useState(initialOrders);
+  const [orders, setOrders] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
   const [search, setSearch] = useState("");
   const [filterStatus, setFilterStatus] = useState("");
   const [selectedIds, setSelectedIds] = useState([]);
@@ -59,15 +23,51 @@ export default function OrdersPage() {
   const [modalEdit, setModalEdit] = useState({ open: false, order: null });
   const [modalDelete, setModalDelete] = useState({ open: false, order: null });
 
+  // Fetch real orders from API
+  const fetchOrders = async () => {
+    try {
+      setLoading(true);
+      const res = await fetch("/api/orders"); // your GET endpoint
+      if (!res.ok) throw new Error("Failed to fetch orders");
+      const data = await res.json();
+
+      // Map backend data to UI-friendly structure
+      const mappedOrders = data.map((o) => ({
+        id: o._id,
+        orderId: o.orderId,
+        customer: o.customer?.name || o.customer?.email || "Unknown",
+        email: o.customer?.email || "",
+        phone: o.customer?.phone || "",
+        items: o.items,
+        total: o.total,
+        status: o.status,
+        date: new Date(o.createdAt).toLocaleDateString(),
+      }));
+
+      setOrders(mappedOrders);
+    } catch (err) {
+      console.error(err);
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchOrders();
+  }, []);
+
+  // Filtered orders based on search & status
   const filteredOrders = useMemo(() => {
     return orders.filter(
       (o) =>
         (o.customer.toLowerCase().includes(search.toLowerCase()) ||
-          o.service.toLowerCase().includes(search.toLowerCase())) &&
-        (filterStatus ? o.status === filterStatus : true)
+          o.orderId.toLowerCase().includes(search.toLowerCase())) &&
+        (filterStatus ? o.status === filterStatus : true),
     );
   }, [orders, search, filterStatus]);
 
+  // KPIs
   const kpis = [
     {
       title: "Total Orders",
@@ -111,10 +111,13 @@ export default function OrdersPage() {
   };
   const handleBulkStatusUpdate = (status) => {
     setOrders(
-      orders.map((o) => (selectedIds.includes(o.id) ? { ...o, status } : o))
+      orders.map((o) => (selectedIds.includes(o.id) ? { ...o, status } : o)),
     );
     setSelectedIds([]);
   };
+
+  if (loading) return <p className="p-4">Loading orders...</p>;
+  if (error) return <p className="p-4 text-red-500">{error}</p>;
 
   return (
     <div className="space-y-6">
@@ -152,14 +155,30 @@ export default function OrdersPage() {
         isOpen={modalAdd}
         onClose={() => setModalAdd(false)}
         onSave={handleAddOrder}
-        services={services}
+        services={[
+          "Web Development",
+          "Software Development",
+          "Networking",
+          "CCTV Installation",
+          "IT Consulting",
+          "Hardware Repair",
+          "Cloud Computing",
+        ]}
       />
       <EditOrderModal
         isOpen={modalEdit.open}
         order={modalEdit.order}
         onClose={() => setModalEdit({ open: false, order: null })}
         onSave={handleEditOrder}
-        services={services}
+        services={[
+          "Web Development",
+          "Software Development",
+          "Networking",
+          "CCTV Installation",
+          "IT Consulting",
+          "Hardware Repair",
+          "Cloud Computing",
+        ]}
       />
       <DeleteOrderModal
         isOpen={modalDelete.open}

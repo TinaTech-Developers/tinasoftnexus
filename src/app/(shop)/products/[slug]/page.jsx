@@ -45,12 +45,12 @@ export default async function ProductPage({ params }) {
             </p>
 
             <span className="text-3xl font-semibold text-blue-600">
-              {product.currency} {product.price}
+              {product.currency}$ {product.price}
             </span>
 
             <p className="text-gray-400 text-sm">{product.warranty}</p>
 
-            <p className="mt-4 text-gray-700">
+            <p className="mt-4 text-gray-700 font-thin">
               {product.description || "No description available."}
             </p>
 
