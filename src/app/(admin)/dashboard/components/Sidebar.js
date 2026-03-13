@@ -9,6 +9,7 @@ import {
   Settings,
   Package2,
   ShoppingBag,
+  Quote,
 } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
@@ -22,6 +23,7 @@ const navItems = [
   { icon: ShoppingBag, label: "Shop Orders", href: "/dashboard/shop-orders" },
   { icon: MessageSquare, label: "Tickets", href: "/dashboard/tickets" },
   { icon: BarChart2, label: "Analytics", href: "/dashboard/analytics" },
+  { icon: Quote, label: "Quotes", href: "/dashboard/quotations" },
   { icon: Settings, label: "Settings", href: "/dashboard/settings" },
 ];
 
