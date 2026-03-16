@@ -30,15 +30,23 @@ const dummyProducts = [
     title: "Logitech MX Master 3 Mouse",
     description:
       "Ergonomic wireless mouse with advanced features for productivity and comfort.",
-    image: "/logitech-mx-master-3.png",
+    image: "/mx-master-3s-mouse-top-view-graphite.webp",
     price: 99,
+  },
+  {
+    id: 5,
+    title: "Headphones",
+    description:
+      "The most prominent option is a specialized photography asset designed primarily for composite portraits, such as newborn or toddler DJ themed shoots.",
+    image: "/b2b-zone-wired2-business-headset-white-gallery1.webp",
+    price: 35,
   },
 ];
 
 export default function FeaturedBanner() {
   return (
     <section className="py-16 bg-gray-50">
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="max-w-6xl  mx-auto px-4 md:px-6">
         <div className="relative bg-gradient-to-r from-[#E6F7FA] to-[#D9ECF2] rounded-3xl p-10 flex flex-col md:flex-row items-center justify-between overflow-hidden">
           <BannerSlider products={dummyProducts} />
         </div>

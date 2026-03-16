@@ -8,7 +8,7 @@ export default function QuotationsPage() {
   const [search, setSearch] = useState("");
 
   const fetchQuotes = async () => {
-    const res = await fetch("/api/quotations");
+    const res = await fetch("/api/invoices");
     const data = await res.json();
     setQuotes(data);
   };
@@ -38,14 +38,14 @@ export default function QuotationsPage() {
   return (
     <div className="p-8 space-y-6">
       <div className="flex justify-between items-center">
-        <h1 className="text-2xl font-semibold">Quotations</h1>
+        <h1 className="text-2xl font-semibold">Invoices</h1>
 
-        <Link
+        {/* <Link
           href="/dashboard/quotations/create"
           className="bg-blue-600 text-white px-4 py-2 rounded"
         >
           Create Quotation
-        </Link>
+        </Link> */}
       </div>
 
       {/* SEARCH */}
@@ -60,7 +60,7 @@ export default function QuotationsPage() {
       <table className="w-full border text-sm">
         <thead className="bg-gray-100">
           <tr>
-            <th className="border p-2">Quote</th>
+            <th className="border p-2 text-start">Invoice</th>
             <th className="border p-2">Customer</th>
             <th className="border p-2">Total</th>
             <th className="border p-2 text-center">Actions</th>
@@ -79,21 +79,21 @@ export default function QuotationsPage() {
                 <td className="border p-2">
                   <Link
                     href={`/dashboard/quotations/${q._id}`}
-                    className="text-blue-600"
+                    className="text-blue-600 "
                   >
-                    {q.quoteNumber}
+                    {q.invoiceNumber}
                   </Link>
                 </td>
 
-                <td className="border p-2">{q.customerName}</td>
+                <td className="border p-2 text-center">{q.customerName}</td>
 
-                <td className="border p-2">${q.total}</td>
+                <td className="border p-2 text-center">${q.total}</td>
 
                 {/* ACTIONS */}
                 <td className="border p-2">
                   <div className="flex justify-center gap-3">
                     <Link
-                      href={`/dashboard/quotations/${q._id}`}
+                      href={`/dashboard/invoices/${q._id}`}
                       className="bg-blue-500 text-white px-3 py-1 rounded text-xs"
                     >
                       View
@@ -101,7 +101,7 @@ export default function QuotationsPage() {
 
                     <button
                       onClick={() =>
-                        window.open(`/dashboard/quotations/${q._id}`, "_blank")
+                        window.open(`/dashboard/invoices/${q._id}`, "_blank")
                       }
                       className="bg-green-600 text-white px-3 py-1 rounded text-xs"
                     >

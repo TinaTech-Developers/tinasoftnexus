@@ -42,17 +42,30 @@ export async function POST(req) {
 
   return NextResponse.json(cart);
 }
-
 export async function DELETE(req) {
   await connectDB();
 
   const sessionId = req.nextUrl.searchParams.get("sessionId");
+  const productId = req.nextUrl.searchParams.get("productId");
 
-  await Cart.findOneAndDelete({ sessionId });
+  if (!sessionId || !productId) {
+    return NextResponse.json(
+      { error: "Missing sessionId or productId" },
+      { status: 400 },
+    );
+  }
 
-  return NextResponse.json({ success: true });
+  const cart = await Cart.findOne({ sessionId });
+  if (!cart) return NextResponse.json({ items: [] });
+
+  // Remove only the item with matching productId
+  cart.items = cart.items.filter(
+    (item) => item.productId.toString() !== productId,
+  );
+
+  await cart.save();
+  return NextResponse.json(cart);
 }
-
 export async function PATCH(req) {
   await connectDB();
 

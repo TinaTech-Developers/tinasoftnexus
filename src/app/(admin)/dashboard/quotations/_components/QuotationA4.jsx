@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+
 export default function QuotationA4({ quote }) {
   const subtotal = quote.items.reduce((a, b) => a + b.price * b.qty, 0);
 
@@ -16,7 +18,14 @@ export default function QuotationA4({ quote }) {
 
       <div className="flex justify-between mb-10">
         <div>
-          <h1 className="text-2xl font-bold text-blue-700">TinaSoft Nexus</h1>
+          <Image
+            src="/logo.png"
+            alt="TinaSoft Nexus Logo"
+            width={120}
+            height={40}
+            className="mb-4"
+          />
+          {/* <h1 className="text-2xl font-bold text-blue-700">TinaSoft Nexus</h1> */}
 
           <p>+263 712 471 209</p>
           <p>+263 773 059 753</p>

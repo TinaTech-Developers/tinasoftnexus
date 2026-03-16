@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
+import { GrDocument } from "react-icons/gr";
 
 const navItems = [
   { icon: Home, label: "Dashboard", href: "/dashboard" },
@@ -24,6 +25,7 @@ const navItems = [
   { icon: MessageSquare, label: "Tickets", href: "/dashboard/tickets" },
   { icon: BarChart2, label: "Analytics", href: "/dashboard/analytics" },
   { icon: Quote, label: "Quotes", href: "/dashboard/quotations" },
+  { icon: GrDocument, label: "Invoices", href: "/dashboard/invoices" },
   { icon: Settings, label: "Settings", href: "/dashboard/settings" },
 ];
 
