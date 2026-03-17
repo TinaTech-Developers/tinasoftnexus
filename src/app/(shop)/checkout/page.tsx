@@ -6,6 +6,7 @@ import ShopLayout from "../shop/layout";
 import Image from "next/image";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { FaWhatsapp } from "react-icons/fa6";
 
 export default function CheckoutPage() {
   const { data: session } = useSession();
@@ -130,6 +131,36 @@ export default function CheckoutPage() {
     );
   }
 
+  const handleWhatsAppOrder = () => {
+    const phone = "263712471209"; // remove +
+
+    const itemsText = cart.items
+      .map(
+        (item) =>
+          `- ${item.name} x${item.quantity} (${item.currency} ${item.price * item.quantity})`,
+      )
+      .join("%0A");
+
+    const message = `
+New Order 🛒
+
+Name: ${customer.name}
+Phone: ${customer.phone}
+
+Items:
+${itemsText}
+
+Total: $${subtotal.toFixed(2)}
+
+Address:
+${customer.address}
+  `.trim();
+
+    const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+
+    window.open(url, "_blank");
+  };
+
   return (
     <ShopLayout>
       <div className="max-w-6xl mx-auto p-6 md:p-10">
@@ -228,13 +259,24 @@ export default function CheckoutPage() {
               <span>Total</span>
               <span>${subtotal.toFixed(2)}</span>
             </div>
-            <button
-              onClick={handlePlaceOrder}
-              disabled={loading}
-              className="w-full mt-6 bg-[#00B3C6] text-white py-3 rounded-lg font-semibold hover:bg-[#0099aa] transition"
-            >
-              {loading ? "Placing Order..." : "Place Order"}
-            </button>
+            <div className="flex flex-col items-center justify-center">
+              <button
+                onClick={handlePlaceOrder}
+                disabled={loading}
+                className="w-full mt-6 bg-[#00B3C6] text-white py-3 rounded-lg font-semibold hover:bg-[#0099aa] transition"
+              >
+                {loading ? "Placing Order..." : "Place Order"}
+              </button>
+              <span className="text-gray-500 mx-auto mt-3">
+                -----------OR---------
+              </span>
+              <button
+                onClick={handleWhatsAppOrder}
+                className="flex items-center justify-center gap-2 w-full mt-3 bg-green-600 text-white py-3 rounded-lg"
+              >
+                Order via <FaWhatsapp color="white" size={22} />
+              </button>
+            </div>
           </div>
         </div>
       </div>

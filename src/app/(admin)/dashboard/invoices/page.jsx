@@ -78,7 +78,7 @@ export default function QuotationsPage() {
               <tr key={q._id}>
                 <td className="border p-2">
                   <Link
-                    href={`/dashboard/quotations/${q._id}`}
+                    href={`/dashboard/invoices/${q._id}`}
                     className="text-blue-600 "
                   >
                     {q.invoiceNumber}

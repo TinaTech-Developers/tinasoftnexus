@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import InvoiceA4 from "../../quotations/_components/invoice/InvoiceA4";
+import InvoicePDFButton from "../_components/InvoicePDFButton";
 
 export default async function Page({ params }) {
   const res = await fetch(
@@ -12,7 +13,8 @@ export default async function Page({ params }) {
 
   return (
     <div className="px-10">
-      <div className="flex justify-end items-end pr-7">
+      <div className="flex justify-between items-center px-7">
+        <InvoicePDFButton />
         <Link
           href="/dashboard/invoices"
           className=" bg-red-600 hover:bg-red-800 text-white px-4 py-2 rounded my-4 "
