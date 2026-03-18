@@ -16,11 +16,25 @@ export default function CheckoutPage() {
     name: "",
     email: "",
     phone: "",
-    address: "",
-    location: null,
+    address: "", // this will now be AREA
+    addressDetails: "", // house/street
   });
+
   const [paymentMethod, setPaymentMethod] = useState("online");
   const [loading, setLoading] = useState(false);
+
+  // ✅ DELIVERY ZONES
+  const DELIVERY_ZONES = {
+    "Harare CBD": 5,
+    Borrowdale: 12,
+    Chitungwiza: 15,
+    Highfield: 6,
+    Chisipite: 10,
+    "Mt Pleasant": 12,
+    Belvedere: 8,
+  };
+
+  const [shippingFee, setShippingFee] = useState(0);
 
   // Load cart
   useEffect(() => {
@@ -49,68 +63,60 @@ export default function CheckoutPage() {
     }
   }, [session]);
 
-  // Google Maps Autocomplete
-  useEffect(() => {
-    // @ts-ignore
-    if (!window.google) return;
-    const input = document.getElementById("address-input");
-    if (!input) return;
-    // @ts-ignore
-    const autocomplete = new window.google.maps.places.Autocomplete(input, {
-      componentRestrictions: { country: "ZW" },
-      fields: ["formatted_address", "geometry"],
-    });
+  // Handle input
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
 
-    autocomplete.addListener("place_changed", () => {
-      const place = autocomplete.getPlace();
-      setCustomer((prev) => ({
-        ...prev,
-        address: place.formatted_address,
-        location: place.geometry?.location?.toJSON(),
-      }));
-    });
-  }, []);
+    // If user selects area → update shipping
+    if (name === "address") {
+      const fee = DELIVERY_ZONES[value] || 15;
+      setShippingFee(fee);
+    }
+
+    setCustomer((prev) => ({ ...prev, [name]: value }));
+  };
 
   const subtotal = cart.items.reduce(
     (total, item) => total + item.price * item.quantity,
     0,
   );
 
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setCustomer((prev) => ({ ...prev, [name]: value }));
-  };
+  const total = subtotal + Number(shippingFee || 0);
 
   const handlePlaceOrder = async () => {
-    if (!customer.name || !customer.email || !customer.address) {
+    if (!customer.name || !customer.phone || !customer.address) {
       toast.error("Please fill in all required fields.");
       return;
     }
 
     setLoading(true);
+
     try {
       const sessionId = localStorage.getItem("cart_session");
 
       const res = await fetch("/api/orders", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ sessionId, customer, paymentMethod }),
+        body: JSON.stringify({
+          sessionId,
+          customer,
+          paymentMethod,
+          shippingFee,
+          total,
+        }),
       });
 
       const data = await res.json();
-      console.log("Order response:", data);
 
       if (paymentMethod === "online") {
         if (data.payNowUrl) {
           toast.success("Redirecting to payment...");
           window.location.href = data.payNowUrl;
         } else {
-          toast.error("Failed to initiate online payment. Please try again.");
+          toast.error("Payment failed.");
         }
       } else {
-        toast.success(
-          `Order created! ID: ${data.orderId}. Please prepare cash for delivery.`,
-        );
+        toast.success(`Order created! ID: ${data.orderId}`);
       }
 
       localStorage.removeItem("cart_session");
@@ -123,38 +129,35 @@ export default function CheckoutPage() {
     }
   };
 
-  if (!cart) {
-    return (
-      <ShopLayout>
-        <p className="text-center py-20 text-gray-500">Loading your cart...</p>
-      </ShopLayout>
-    );
-  }
-
+  // ✅ WhatsApp Order
   const handleWhatsAppOrder = () => {
-    const phone = "263712471209"; // remove +
+    const phone = "263712471209";
 
     const itemsText = cart.items
       .map(
         (item) =>
-          `- ${item.name} x${item.quantity} (${item.currency} ${item.price * item.quantity})`,
+          `- ${item.name} x${item.quantity} (${
+            item.currency
+          } ${item.price * item.quantity})`,
       )
       .join("%0A");
 
     const message = `
-New Order 🛒
+*New Order* 🛒
 
-Name: ${customer.name}
-Phone: ${customer.phone}
+*Name*: ${customer.name}
+*Phone*: ${customer.phone}
 
-Items:
+*Area*: ${customer.address}
+*Address*: ${customer.addressDetails}
+
+*Items*:
 ${itemsText}
 
-Total: $${subtotal.toFixed(2)}
-
-Address:
-${customer.address}
-  `.trim();
+*Subtotal*: $${subtotal.toFixed(2)}
+*Delivery*: $${shippingFee}
+*Total*: $${total.toFixed(2)}
+    `.trim();
 
     const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
 
@@ -165,129 +168,130 @@ ${customer.address}
     <ShopLayout>
       <div className="max-w-6xl mx-auto p-6 md:p-10">
         <h1 className="text-3xl font-bold mb-8">Checkout</h1>
+
         <div className="grid md:grid-cols-2 gap-10">
-          {/* Shipping Form */}
+          {/* FORM */}
           <div className="bg-white border rounded-xl p-6 shadow-sm space-y-4">
-            <h2 className="text-xl font-semibold mb-4">Shipping Information</h2>
+            <h2 className="text-xl font-semibold">Shipping Info</h2>
+
             <input
               type="text"
               name="name"
               placeholder="Full Name"
               value={customer.name}
               onChange={handleInputChange}
-              className="w-full border rounded-lg p-3"
+              className="w-full border p-3 rounded-lg"
             />
+
             <input
               type="email"
-              name="email"
               value={customer.email}
               readOnly
-              className="w-full border rounded-lg p-3 bg-gray-100"
+              className="w-full border p-3 rounded-lg bg-gray-100"
             />
+
             <input
               type="text"
               name="phone"
               placeholder="Phone Number"
               value={customer.phone}
               onChange={handleInputChange}
-              className="w-full border rounded-lg p-3"
-            />
-            <input
-              id="address-input"
-              type="text"
-              name="address"
-              placeholder="Shipping Address"
-              value={customer.address}
-              onChange={handleInputChange}
-              className="w-full border rounded-lg p-3"
+              className="w-full border p-3 rounded-lg"
             />
 
-            {/* Payment Method */}
-            <div className="mt-4">
-              <h3 className="font-semibold mb-2">Payment Method</h3>
-              <label className="flex items-center gap-2">
+            {/* ✅ AREA SELECT */}
+            <select
+              name="address"
+              value={customer.address}
+              onChange={handleInputChange}
+              className="w-full border p-3 rounded-lg"
+            >
+              <option value="">Select Area</option>
+              {Object.keys(DELIVERY_ZONES).map((zone) => (
+                <option key={zone} value={zone}>
+                  {zone}
+                </option>
+              ))}
+            </select>
+
+            {/* ✅ Exact Address */}
+            <input
+              type="text"
+              name="addressDetails"
+              placeholder="House number / street"
+              value={customer.addressDetails}
+              onChange={handleInputChange}
+              className="w-full border p-3 rounded-lg"
+            />
+
+            {/* PAYMENT */}
+            <div>
+              <h3 className="font-semibold">Payment</h3>
+              <label className="flex gap-2">
                 <input
                   type="radio"
-                  name="paymentMethod"
-                  value="online"
                   checked={paymentMethod === "online"}
                   onChange={() => setPaymentMethod("online")}
                 />
-                Pay Online
+                Online
               </label>
-              <label className="flex items-center gap-2">
+              <label className="flex gap-2">
                 <input
                   type="radio"
-                  name="paymentMethod"
-                  value="cod"
                   checked={paymentMethod === "cod"}
                   onChange={() => setPaymentMethod("cod")}
                 />
-                Pay on Delivery
+                Cash on Delivery
               </label>
             </div>
           </div>
 
-          {/* Order Summary */}
-          <div className="bg-white border rounded-xl p-6 shadow-sm h-fit space-y-4">
-            <h2 className="text-xl font-semibold mb-4">Order Summary</h2>
+          {/* SUMMARY */}
+          <div className="bg-white border rounded-xl p-6 shadow-sm space-y-4">
+            <h2 className="text-xl font-semibold">Order Summary</h2>
+
             {cart.items.map((item) => (
-              <div
-                key={item.productId}
-                className="flex items-center justify-between"
-              >
-                <div className="flex items-center gap-3">
-                  <Image
-                    src={item.image || "/placeholder.png"}
-                    width={50}
-                    height={50}
-                    alt={item.name}
-                    className="rounded-lg"
-                  />
-                  <span>{item.name}</span>
-                </div>
+              <div key={item.productId} className="flex justify-between">
                 <span>
-                  {item.currency} {item.price * item.quantity}
+                  {item.name} x{item.quantity}
                 </span>
+                <span>${item.price * item.quantity}</span>
               </div>
             ))}
-            <div className="border-t pt-3 flex justify-between font-semibold">
+
+            <div className="flex justify-between font-semibold border-t pt-2">
               <span>Subtotal</span>
               <span>${subtotal.toFixed(2)}</span>
             </div>
-            <div className="border-t pt-3 flex justify-between font-semibold">
+
+            <div className="flex justify-between">
+              <span>Delivery</span>
+              <span>${shippingFee}</span>
+            </div>
+
+            <div className="flex justify-between font-bold border-t pt-2">
               <span>Total</span>
-              <span>${subtotal.toFixed(2)}</span>
+              <span>${total.toFixed(2)}</span>
             </div>
-            <div className="flex flex-col items-center justify-center">
-              <button
-                onClick={handlePlaceOrder}
-                disabled={loading}
-                className="w-full mt-6 bg-[#00B3C6] text-white py-3 rounded-lg font-semibold hover:bg-[#0099aa] transition"
-              >
-                {loading ? "Placing Order..." : "Place Order"}
-              </button>
-              <span className="text-gray-500 mx-auto mt-3">
-                -----------OR---------
-              </span>
-              <button
-                onClick={handleWhatsAppOrder}
-                className="flex items-center justify-center gap-2 w-full mt-3 bg-green-600 text-white py-3 rounded-lg"
-              >
-                Order via <FaWhatsapp color="white" size={22} />
-              </button>
-            </div>
+
+            <button
+              onClick={handlePlaceOrder}
+              className="w-full bg-blue-600 text-white py-3 rounded-lg"
+            >
+              Place Order
+            </button>
+
+            <button
+              onClick={handleWhatsAppOrder}
+              className="w-full bg-green-600 text-white py-3 rounded-lg flex items-center justify-center gap-2"
+            >
+              Order via WhatsApp <FaWhatsapp />
+            </button>
           </div>
         </div>
       </div>
-      <ToastContainer
-        position="top-right"
-        autoClose={3000}
-        hideProgressBar={false}
-        newestOnTop
-        closeOnClick
-        pauseOnHover
-      />
+
+      <ToastContainer />
     </ShopLayout>
   );
 }

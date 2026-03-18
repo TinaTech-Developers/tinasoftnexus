@@ -5,6 +5,7 @@ import { ShoppingCart } from "lucide-react";
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { SessionProvider } from "next-auth/react";
+import Image from "next/image";
 
 export default function ShopLayout({ children }) {
   const [cartCount, setCartCount] = useState(0);
@@ -39,13 +40,20 @@ export default function ShopLayout({ children }) {
         <header className="sticky top-0 z-50 bg-white shadow-sm border-b">
           <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
             {/* Logo */}
-            <Link href="/" className="flex items-center gap-2">
-              <div className="w-9 h-9 bg-[#00B3C6] rounded-lg flex items-center justify-center text-white font-bold">
+            <Link href="/shop" className="flex items-center gap-2">
+              {/* <div className="w-9 h-9 bg-[#00B3C6] rounded-lg flex items-center justify-center text-white font-bold">
                 T
               </div>
               <span className="font-bold text-blue-900 text-lg">
                 TinaSoft Nexus
-              </span>
+              </span> */}
+              <Image
+                src={"/logo.png"}
+                alt="Tinasoft Nexus"
+                height={80}
+                width={120}
+                className="p-2"
+              />
             </Link>
 
             {/* Desktop Navigation */}
