@@ -57,14 +57,14 @@ function Navbar() {
           : <IoMdMenu />}
         </div>
         <ul
-          className={`md:flex md:items-center md:pb-0 pb-4 absolute md:static bg-white x-[-1] left-0 w-full md:w-auto md:pl-0 pl-9 transition-all  duration-500 ease-in mt-8 ${
+          className={`flex flex-col items-center justify-center md:flex md:flex-row md:items-center md:justify-between md:pb-0 pb-4 absolute md:static bg-white left-0 w-full md:w-auto transition-all duration-500 ease-in mt-8 ${
             open ? "top-10 opacity-100" : "top-[-490px]"
           }`}
         >
           {links.map((link) => (
             <li
               key={link.name}
-              className="md:ml-8 text-base md:my-0 my-4 relative"
+              className="md:ml-8 text-base md:my-0 my-2 relative"
             >
               <span className="flex items-center justify-center ">
                 {/* For "Services", use a clickable anchor tag but allow dropdown toggling */}
@@ -108,13 +108,15 @@ function Navbar() {
               )}
             </li>
           ))}
-          <Link
-            className="px-3 py-1 bg-blue-400 text-white hover:bg-blue-600 ml-10 rounded-lg mr-2"
-            href={"/shop"}
-          >
-            Shop Now
-          </Link>
-          <ShoppingCart color="#42A5F5" size={22} />
+          <div className="flex items-center justify-center gap-2">
+            <Link
+              className="px-3 py-1 bg-blue-400 text-white hover:bg-blue-600 ml-10 rounded-lg mr-2"
+              href={"/shop"}
+            >
+              Shop Now
+            </Link>
+            <ShoppingCart color="#42A5F5" size={22} />
+          </div>
         </ul>
       </div>
     </div>
