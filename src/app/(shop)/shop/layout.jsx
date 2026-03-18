@@ -40,7 +40,7 @@ export default function ShopLayout({ children }) {
         <header className="sticky top-0 z-50 bg-white shadow-sm border-b">
           <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
             {/* Logo */}
-            <Link href="/shop" className="flex items-center gap-2">
+            <Link href="/" className="flex items-center gap-2">
               {/* <div className="w-9 h-9 bg-[#00B3C6] rounded-lg flex items-center justify-center text-white font-bold">
                 T
               </div>

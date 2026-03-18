@@ -1,5 +1,6 @@
 "use client";
 
+import { ShoppingCart } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
@@ -51,10 +52,12 @@ function Navbar() {
           onClick={() => setOpen(!open)}
           className="text-3xl absolute right-8 top-0 cursor-pointer md:hidden my-8"
         >
-          {open ? <IoMdClose /> : <IoMdMenu />}
+          {open ?
+            <IoMdClose />
+          : <IoMdMenu />}
         </div>
         <ul
-          className={`md:flex md:items-center md:pb-0 pb-4 absolute md:static bg-white x-[-1] left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in mt-8 ${
+          className={`md:flex md:items-center md:pb-0 pb-4 absolute md:static bg-white x-[-1] left-0 w-full md:w-auto md:pl-0 pl-9 transition-all  duration-500 ease-in mt-8 ${
             open ? "top-10 opacity-100" : "top-[-490px]"
           }`}
         >
@@ -81,11 +84,9 @@ function Navbar() {
                 {/* Add the dropdown arrow icon here */}
                 {link.dropdown && (
                   <span className="ml-1 mb-1">
-                    {dropdownOpen ? (
+                    {dropdownOpen ?
                       <IoChevronUp className="inline-block text-lg" />
-                    ) : (
-                      <IoChevronDown className="inline-block text-lg" />
-                    )}
+                    : <IoChevronDown className="inline-block text-lg" />}
                   </span>
                 )}
               </span>
@@ -107,6 +108,13 @@ function Navbar() {
               )}
             </li>
           ))}
+          <Link
+            className="px-3 py-1 bg-blue-400 text-white hover:bg-blue-600 ml-10 rounded-lg mr-2"
+            href={"/shop"}
+          >
+            Shop Now
+          </Link>
+          <ShoppingCart color="#42A5F5" size={22} />
         </ul>
       </div>
     </div>

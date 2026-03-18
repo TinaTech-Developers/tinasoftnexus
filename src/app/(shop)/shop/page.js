@@ -1,40 +1,36 @@
-"use client";
-
-import { useState } from "react";
-import ShopHero from "./_components/ShopHero";
-import CategoryGrid from "./_components/CategoryGrid";
-import FeaturedBanner from "./_components/banner/FeaturedBanner";
-import ShopSidebar from "./_components/ShopSidebar";
-import ProductListing from "./_components/ProductListing";
+import ShopPageClient from "./_components/ShopPageClient";
+// SEO metadata
+export const metadata = {
+  title: "TinaSoft Nexus Shop | Best ICT Products in Zimbabwe",
+  description:
+    "Shop the latest ICT products and solutions from TinaSoft Nexus. Explore laptops, software, and networking equipment in Zimbabwe.",
+  keywords: [
+    "TinaSoft Nexus Shop",
+    "ICT products Zimbabwe",
+    "Buy laptops Harare",
+    "Networking solutions Zimbabwe",
+    "Software solutions Harare",
+    "Laptops in Harare",
+  ],
+  openGraph: {
+    title: "TinaSoft Nexus Shop | Best ICT Products in Zimbabwe",
+    description:
+      "Browse and buy high-quality ICT products and solutions from TinaSoft Nexus in Zimbabwe.",
+    url: "https://tinasoftnexus.co.zw/shop",
+    siteName: "TinaSoft Nexus",
+    type: "website",
+    locale: "en_ZW",
+    images: [
+      {
+        url: "https://tinasoftnexus.co.zw/logo.png",
+        width: 1200,
+        height: 630,
+        alt: "TinaSoft Nexus Logo",
+      },
+    ],
+  },
+};
 
 export default function Page() {
-  const [search, setSearch] = useState("");
-  const [category, setCategory] = useState([]);
-  const [price, setPrice] = useState(3000);
-
-  return (
-    <div className="min-h-screen bg-gray-50">
-      <ShopHero />
-      <CategoryGrid />
-
-      <div className="max-w-7xl mx-auto px-6 py-10">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
-          <ShopSidebar
-            search={search}
-            setSearch={setSearch}
-            category={category}
-            setCategory={setCategory}
-            price={price}
-            setPrice={setPrice}
-          />
-
-          <div className="md:col-span-3 space-y-10">
-            <FeaturedBanner />
-
-            <ProductListing search={search} category={category} price={price} />
-          </div>
-        </div>
-      </div>
-    </div>
-  );
+  return <ShopPageClient />;
 }
