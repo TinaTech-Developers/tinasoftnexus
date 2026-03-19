@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import ProductHero from "../_components/ProductHero";
 import ProductImageSwiper from "../_components/ProductImageSwiper";
 import ShopLayout from "../../shop/layout";
-
+import AddToCartButton from "../../shop/_components/AddToCartButton";
 async function getProductBySlug(slug) {
   try {
     const res = await fetch(
@@ -52,7 +52,8 @@ export default async function ProductPage({ params }) {
               {product.description || "No description available."}
             </p>
 
-            <button
+            <AddToCartButton product={product} />
+            {/* <button
               className={`mt-6 px-6 py-3 rounded-lg text-white font-medium transition ${
                 product.stock > 0 ?
                   "bg-blue-600 hover:bg-blue-700"
@@ -61,7 +62,7 @@ export default async function ProductPage({ params }) {
               disabled={product.stock === 0}
             >
               {product.stock > 0 ? "Add to Cart" : "Out of Stock"}
-            </button>
+            </button> */}
           </div>
         </div>
       </div>
