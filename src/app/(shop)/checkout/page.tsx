@@ -32,6 +32,10 @@ export default function CheckoutPage() {
     Chisipite: 10,
     "Mt Pleasant": 12,
     Belvedere: 8,
+    Ruwa: 10,
+    Mabvazuva: 12,
+    Zimre: 10,
+    Avondale: 8,
   };
 
   const [shippingFee, setShippingFee] = useState(0);
@@ -244,6 +248,11 @@ ${itemsText}
                 Cash on Delivery
               </label>
             </div>
+            <p className="font-extralight">
+              Your personal data will be used to process your order, support
+              your experience throughout this website, and for other purposes
+              described in our privacy policy.
+            </p>
           </div>
 
           {/* SUMMARY */}
