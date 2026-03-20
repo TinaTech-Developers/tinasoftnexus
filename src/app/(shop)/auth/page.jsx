@@ -4,6 +4,7 @@ import { useState } from "react";
 import { signIn } from "next-auth/react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 
 export default function AuthPage() {
   const [email, setEmail] = useState("");
@@ -12,6 +13,9 @@ export default function AuthPage() {
   const [loading, setLoading] = useState(false);
   const [errorMsg, setErrorMsg] = useState("");
   const router = useRouter();
+
+  const searchParams = useSearchParams();
+  const callbackUrl = searchParams.get("callbackUrl") || "/cart";
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -42,7 +46,7 @@ export default function AuthPage() {
         setErrorMsg(result.error);
       } else {
         // Redirect to cart or checkout
-        router.push("/cart");
+        router.push(callbackUrl);
       }
     } catch (err) {
       setErrorMsg(err.message);
